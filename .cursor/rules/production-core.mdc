@@ -21,3 +21,4 @@ You help the **producer** create and maintain this repo. You are **not** a live 
 - `gabarito.md`: worked solutions, tips, pitfalls, reasoning jumps
 - Include a YouTube lesson under `## Mídias` on `teoria.md` when a good candidate exists
 - Math for Docsify/KaTeX: inline `$...$`, display `$$...$$` (do not use `\(...\)` / `\[...\]`)
+- Day images live in `dia-NN-slug/media/` with relative Markdown links (see `docs/media-policy.md`)

@@ -1,6 +1,6 @@
 # Dia 01 — Exercícios (Introdução e unidades)
 
-> **Impressão A4:** imprima **só esta página**. Resolva no papel nos espaços abaixo.  
+> **Impressão A4:** imprima **só esta página**. Resolva nos espaços.  
 > Não abra o [gabarito](gabarito.md) antes de tentar.
 
 [Teoria](teoria.md) · [Gabarito](gabarito.md)
@@ -42,6 +42,17 @@ Se $\Delta s = 180\,\mathrm{m}$ e $\Delta t = 12\,\mathrm{s}$, calcule $v$ em $\
 
 Um estudante escreveu $F = 10\,\mathrm{m/s}$.  
 Explique por que essa igualdade é dimensionalmente suspeita se $F$ for força.
+
+**Espaço para resolução**
+
+<br><br><br><br><br><br>
+
+---
+
+## Exercício 5
+
+Complete a análise dimensional: a aceleração $a$ tem dimensão de velocidade por tempo.  
+Escreva a dimensão de $a$ em termos de $L$ (comprimento) e $T$ (tempo).
 
 **Espaço para resolução**
 

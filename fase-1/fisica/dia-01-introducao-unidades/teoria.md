@@ -1,6 +1,6 @@
 # Dia 01 — Introdução e unidades
 
-**Meta:** reconhecer grandezas físicas fundamentais, o Sistema Internacional (SI) e converter unidades simples usadas em mecânica.
+**Meta:** reconhecer grandezas físicas, o Sistema Internacional (SI), prefixos e conversões simples usadas em mecânica, e checar coerência dimensional de uma expressão.
 
 ## Nesta lição
 
@@ -10,14 +10,19 @@
 
 ## Mídias
 
-- Vídeoaula: [Busque no YouTube: “unidades de medida SI física ensino médio”](https://www.youtube.com/results?search_query=unidades+de+medida+SI+f%C3%ADsica+ensino+m%C3%A9dio) _(substituir por vídeo curado)_
-- Referência: [Programa oficial do ITA](https://vestibular.ita.br/programa_2026.pdf)
+- Vídeoaula (SI — bases): [Sistema Internacional de Unidades (SIU) — Prof. Marcos Rossetto](https://www.youtube.com/watch?v=VultrEX7cVA)
+- Vídeoaula (conversões): [Conversão de unidades na Física — Prof. Luizildo Pittol](https://www.youtube.com/watch?v=AXMXQnGxk3w)
+- Texto (livro aberto): [OpenStax College Physics 2e — 1.2 Physical Quantities and Units](https://openstax.org/books/college-physics-2e/pages/1-2-physical-quantities-and-units)
+- Referência oficial (SI, PT-BR): [Inmetro — Sistema Internacional de Unidades (tradução)](https://www.gov.br/inmetro/pt-br/assuntos/metrologia-cientifica/documentos-tecnicos-em-metrologia/si_versao_final.pdf)
+- Referência oficial (SI, EN): [NIST SP 330 — The International System of Units (2019)](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.330-2019.pdf)
+- Programa do exame: [ITA — programa 2026 (PDF)](https://vestibular.ita.br/programa_2026.pdf)
 
 ## Definição
 
-Física descreve a natureza com **grandezas** (comprimento, tempo, massa, …) e **unidades**.
+Uma **grandeza física** é uma propriedade mensurável (comprimento, tempo, massa, …).  
+Uma **unidade** é o padrão usado para expressar o valor dessa grandeza.
 
-No SI, unidades de base mais usadas no início da mecânica:
+O **Sistema Internacional de Unidades (SI)** fixa unidades de base. No início da mecânica, as mais usadas são:
 
 | Grandeza | Unidade SI | Símbolo |
 |----------|------------|---------|
@@ -25,18 +30,34 @@ No SI, unidades de base mais usadas no início da mecânica:
 | Tempo | segundo | s |
 | Massa | quilograma | kg |
 
-Prefixos comuns: $k$ (10³), $c$ (10⁻²), $m$ (10⁻³), $\mu$ (10⁻⁶).
+Outras unidades do SI (ampere, kelvin, mol, candela) aparecem em eletromagnetismo, térmica e química — você as encontra no programa completo do ITA.
 
-**Conversão:** multiplique ou divida pela potência de 10 adequada.
+**Prefixos** (potências de 10) evitam números enormes ou minúsculos. Exemplos frequentes:
 
-**Coerência dimensional:** os dois lados de uma igualdade devem ter as mesmas unidades.
+| Prefixo | Fator | Exemplo |
+|---------|-------|---------|
+| quilo ($k$) | $10^{3}$ | $1\,\mathrm{km} = 10^{3}\,\mathrm{m}$ |
+| centi ($c$) | $10^{-2}$ | $1\,\mathrm{cm} = 10^{-2}\,\mathrm{m}$ |
+| mili ($m$) | $10^{-3}$ | $1\,\mathrm{ms} = 10^{-3}\,\mathrm{s}$ |
+| micro ($\mu$) | $10^{-6}$ | $1\,\mu\mathrm{s} = 10^{-6}\,\mathrm{s}$ |
+
+**Conversão:** multiplique (ou divida) pelo fator que troca a unidade, cancelando o que não interessa.
+
+**Coerência dimensional:** os dois lados de uma igualdade física devem ter a **mesma dimensão**. Ex.: velocidade tem dimensão comprimento/tempo ($L/T$), não força.
 
 ## Exemplos
 
 **Exemplo 1.** Converter $3\,\mathrm{km}$ para metros.
 
 $$
-3\,\mathrm{km} = 3 \times 10^3\,\mathrm{m} = 3000\,\mathrm{m}
+3\,\mathrm{km} = 3 \times 10^{3}\,\mathrm{m} = 3000\,\mathrm{m}
 $$
 
-**Exemplo 2.** A velocidade média é $v = \Delta s / \Delta t$. Se $\Delta s = 100\,\mathrm{m}$ e $\Delta t = 5\,\mathrm{s}$, então $v = 20\,\mathrm{m/s}$. Em $\mathrm{km/h}$: multiplique por $3{,}6$ → $72\,\mathrm{km/h}$.
+**Exemplo 2.** Velocidade média $v = \Delta s / \Delta t$. Se $\Delta s = 100\,\mathrm{m}$ e $\Delta t = 5\,\mathrm{s}$:
+
+$$
+v = \frac{100}{5} = 20\,\mathrm{m/s}
+$$
+
+Em $\mathrm{km/h}$: $20 \times 3{,}6 = 72\,\mathrm{km/h}$  
+(o fator $3{,}6$ vem de $\dfrac{3600\,\mathrm{s/h}}{1000\,\mathrm{m/km}}$).

@@ -21,6 +21,8 @@ Centro do método: **papel e lápis**. A tela serve para ler e imprimir.
 - [Fase 2 — Aprofundamento](FASE_2.md)
 - [Fase 3 — Intensidade](FASE_3.md)
 
+Mapa completo dos dias (visão do produtor): [docs/curriculum-map.md](docs/curriculum-map.md).
+
 ## Programa oficial
 
 Índice com links para o programa do exame: [PROGRAMA.md](PROGRAMA.md).

@@ -41,3 +41,11 @@ Never fabricate official ITA keys; mark producer-authored material
 - Inline: `$v = \Delta s / \Delta t$`
 - Display: `$$ s = s_0 + vt $$`
 - Do **not** use `\(...\)` or `\[...\]` (they render as raw text)
+
+## Images
+
+- Optional folder `media/` inside the day directory
+- Reference: `![alt text](media/filename.svg)`
+- Prefer SVG for diagrams; PNG/WebP for photos
+- No hotlinked third-party images; see `docs/media-policy.md`
+- If missing: `<!-- TODO media: description -->` plus chat pendency

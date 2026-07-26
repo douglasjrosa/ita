@@ -39,6 +39,17 @@ Do not create `HOJE.md`. Do not invent official ITA answer keys.
 
 Templates: `templates/teoria.md`, `templates/exercicios.md`, `templates/gabarito.md`.
 
+## Generating a day (`/criar`)
+
+1. In Agent chat, type `/criar` and pass the **short** path, e.g. `fase-1/fisica/dia-01`
+   (day number only; the agent resolves `dia-01-*` to the full folder slug).
+2. The agent researches sources, writes the three Markdown files, and lists sources in chat for NotebookLM review.
+3. Command file: `.cursor/commands/criar.md`. Skill: `.cursor/skills/criar-dia/`.
+
+## Images and figures
+
+See [media-policy.md](media-policy.md). Short version: store files in `dia-NN-slug/media/` and link with `![alt](media/file.svg)`. Prefer SVG; no hotlinks; credit licenses.
+
 ## Math (KaTeX via Docsify)
 
 Use `$inline$` and `$$display$$` only. Do not use LaTeX `\(...\)` / `\[...\]` delimiters — Docsify-KaTeX will not render them and `\Delta` will show as raw text.
@@ -62,7 +73,8 @@ NotebookLM is not a runtime dependency of the site.
 
 | Skill | Use when |
 |-------|----------|
-| `/create-study-day` | New day folder (3 files) + link on `FASE_n.md` |
+| `/criar` | Generate/replace full day content (teoria + exercícios + gabarito) from research |
+| `/create-study-day` | Scaffold empty day folder + phase checklist line only |
 | `/curate-day-links` | Normalize `## Mídias` on `teoria.md` |
 | `/notebooklm-to-day` | Format NotebookLM paste into the three day files |
 | `/update-phase-index` | Sync checklist after add/reorder/rename |

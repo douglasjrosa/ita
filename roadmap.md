@@ -20,7 +20,12 @@ Master plan for complementary ITA entrance-exam preparation. Student-facing page
 | 2 | Depth | Finish program depth; discursive practice |
 | 3 | Intensity | Timed mocks; 2nd-phase focus; exam rhythm |
 
-Day-by-day topic lists for each phase are **future plannings**. Do not expand the full curriculum in infra v1.
+## Curriculum map (done)
+
+Day-folder backlog for all subjects/phases: [`docs/curriculum-map.md`](docs/curriculum-map.md) (~216 days).
+
+- Folders exist with `.gitkeep` (except Phase 1 Physics days 01–02, which already have lesson files).
+- Lesson Markdown (`teoria` / `exercicios` / `gabarito`) is authored in **per-day future plannings**.
 
 ## Definitions of done
 
@@ -30,24 +35,28 @@ Day-by-day topic lists for each phase are **future plannings**. Do not expand th
 - README + FASE_1/2/3 + PROGRAMA + roadmap + producer guide
 - Example day(s) only
 - Cursor production rules and skills
-- No student-tutor skills, no MCP extras, no full exam mining
 
-### Phase ready to fill with days
+### Curriculum folders done
 
-- Infra v1 done
-- Ordered day backlog agreed for that subject (separate planning)
-- Official program links current in `PROGRAMA.md`
+- Full day-folder tree across phases 1–3
+- `docs/curriculum-map.md` + updated `FASE_*.md`
+- No bulk lesson content yet
+
+### Phase ready to fill with lesson files
+
+- Curriculum folders done
+- Pick one `dia-NN-slug` and run a focused content planning
 
 ## Explicit non-goals (now)
 
-- Week-by-week calendar for phases 1–3
-- Full mining of all past ITA exams
+- Authoring all lesson Markdown at once
+- Full mining of all past ITA exams into solved banks
 - Student tutor rules/skills in Cursor
 - Custom study apps / Obsidian / Google Docs as student platform
 
 ## Later plannings (suggested)
 
-1. Populate Phase 1 — Physics
-2. Populate Phase 1 — Mathematics / Chemistry
+1. Author Phase 1 Physics days 03+ (and refresh 01–02 if needed)
+2. Author Phase 1 Mathematics / Chemistry day batches
 3. Past-exam analysis protocol under `provas/`
 4. Optional Docsify print CSS for exercises-only printing
