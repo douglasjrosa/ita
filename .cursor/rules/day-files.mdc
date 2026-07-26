@@ -1,0 +1,37 @@
+---
+description: Day file structure and naming for fase-*/ study days
+globs: fase-*/**/*.md,templates/day.md
+alwaysApply: false
+---
+
+# Day files
+
+## Naming
+
+`fase-n/<subject>/dia-NN-slug.md` (zero-padded day number + kebab slug).
+
+Subjects: `fisica`, `matematica`, `quimica`, `portugues`, `ingles`.
+
+## Required headings (PT-BR, exact)
+
+```markdown
+# Dia NN — Título
+
+## Meta
+## Links
+## Teoria
+## Exercícios
+## Gabarito
+```
+
+## Links
+
+- Prefer a curated YouTube `Vídeoaula` first
+- No error-log folder links in the day flow
+
+## Content
+
+- Meta: one clear goal
+- Teoria: concise
+- Exercícios: numbered, printable on paper
+- Gabarito: short; never fabricate official ITA keys

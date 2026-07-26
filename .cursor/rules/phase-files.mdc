@@ -1,0 +1,25 @@
+---
+description: Phase index FASE_n.md checklist and relative Docsify links
+globs: FASE_*.md,templates/phase.md
+alwaysApply: false
+---
+
+# Phase indexes
+
+`FASE_1.md`, `FASE_2.md`, `FASE_3.md` are perennial maps.
+
+## Required pattern
+
+- Short phase goal in PT-BR
+- Point to README for the fixed study loop (do not duplicate long daily instructions)
+- Per-subject sections with markdown task lists:
+
+```markdown
+- [ ] [Dia 01 — Título](fase-1/fisica/dia-01-slug.md)
+```
+
+## Rules
+
+- Use **relative** links that resolve in Docsify from repo root
+- When adding/renaming/reordering days, update the matching `FASE_n.md` in the same change
+- Placeholders for empty subjects are allowed until content exists

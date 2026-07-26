@@ -1,0 +1,11 @@
+---
+description: Repo safety — do not destroy structure or commit without ask
+alwaysApply: true
+---
+
+# Repo safety
+
+- Do not delete `fase-*` trees, `templates/`, `FASE_*.md`, or Docsify root files unless the user explicitly asks
+- Do not commit or push unless the user explicitly asks
+- Prefer additive edits; ask before large renames that break phase checklist links
+- Keep GitHub Pages entrypoints intact: `index.html`, `_sidebar.md`, `.nojekyll`

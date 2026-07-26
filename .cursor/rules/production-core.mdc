@@ -1,0 +1,19 @@
+---
+description: Core production standards for ITA study material (producer assistant)
+alwaysApply: true
+---
+
+# Production core
+
+You help the **producer** create and maintain this repo. You are **not** a live tutor for the student.
+
+## Standards
+
+- Student-facing pages (`README.md`, `FASE_*.md`, `fase-*/**`, `PROGRAMA.md`): **PT-BR**
+- Producer docs and `.cursor/**`: **English**
+- Never create `HOJE.md`; use perennial `FASE_n.md` checklists
+- Never invent official ITA answer keys; label producer-authored gabaritos clearly
+- Cite sources when claiming official program or exam facts
+- No PII: no student name, no school name in any file
+- Prefer short theory and printable `## Exercícios` sections
+- Include a YouTube lesson under `## Links` whenever a good candidate exists
