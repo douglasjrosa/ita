@@ -6,8 +6,8 @@ Dinâmica do estudo: ver [README](README.md).
 
 ## Física
 
-- [x] [Dia 01 — Introdução e unidades](fase-1/fisica/dia-01-introducao-unidades.md)
-- [ ] [Dia 02 — MRU](fase-1/fisica/dia-02-mru.md)
+- [x] [Dia 01 — Introdução e unidades](fase-1/fisica/dia-01-introducao-unidades/teoria.md)
+- [ ] [Dia 02 — MRU](fase-1/fisica/dia-02-mru/teoria.md)
 
 ## Matemática
 

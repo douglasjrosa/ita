@@ -1,5 +1,5 @@
 ---
-description: Phase index FASE_n.md checklist and relative Docsify links
+description: Phase index FASE_n.md checklist links to day teoria.md
 globs: FASE_*.md,templates/phase.md
 alwaysApply: false
 ---
@@ -11,15 +11,15 @@ alwaysApply: false
 ## Required pattern
 
 - Short phase goal in PT-BR
-- Point to README for the fixed study loop (do not duplicate long daily instructions)
-- Per-subject sections with markdown task lists:
+- Point to README for the fixed study loop
+- Per-subject task lists linking to each day’s **teoria.md**:
 
 ```markdown
-- [ ] [Dia 01 — Título](fase-1/fisica/dia-01-slug.md)
+- [ ] [Dia 01 — Título](fase-1/fisica/dia-01-slug/teoria.md)
 ```
 
 ## Rules
 
-- Use **relative** links that resolve in Docsify from repo root
-- When adding/renaming/reordering days, update the matching `FASE_n.md` in the same change
+- Use paths from repo root (Docsify `relativePath: false`)
+- When adding/renaming/reordering day folders, update `FASE_n.md` in the same change
 - Placeholders for empty subjects are allowed until content exists

@@ -1,37 +1,43 @@
 ---
-description: Day file structure and naming for fase-*/ study days
-globs: fase-*/**/*.md,templates/day.md
+description: Day folder files teoria/exercicios/gabarito under fase-*/
+globs: "**/dia-*/teoria.md,**/dia-*/exercicios.md,**/dia-*/gabarito.md,templates/teoria.md,templates/exercicios.md,templates/gabarito.md"
 alwaysApply: false
 ---
 
-# Day files
+# Day folder files
 
 ## Naming
 
-`fase-n/<subject>/dia-NN-slug.md` (zero-padded day number + kebab slug).
+`fase-n/<subject>/dia-NN-slug/` with exactly:
+
+- `teoria.md`
+- `exercicios.md`
+- `gabarito.md`
 
 Subjects: `fisica`, `matematica`, `quimica`, `portugues`, `ingles`.
 
-## Required headings (PT-BR, exact)
+## `teoria.md`
 
-```markdown
-# Dia NN — Título
+- Title + **Meta**
+- Nav: Teoria / Exercícios / Gabarito
+- `## Mídias` (YouTube first when possible)
+- `## Definição` (short)
+- `## Exemplos` (up to 2; omit only if not applicable)
+- No full exercise lists here
 
-## Meta
-## Links
-## Teoria
-## Exercícios
-## Gabarito
-```
+## `exercicios.md`
 
-## Links
+- Print-first A4: exercise statement + **Espaço para resolução** + vertical space (`<br>` ok)
+- Link to teoria and gabarito; warn not to open gabarito early
+- No long theory blocks
 
-- Prefer a curated YouTube `Vídeoaula` first
-- No error-log folder links in the day flow
+## `gabarito.md`
 
-## Content
+Per exercise: **Resposta**, **Desenvolvimento**, plus tips / pitfalls / reasoning jumps when useful  
+Never fabricate official ITA keys; mark producer-authored material
 
-- Meta: one clear goal
-- Teoria: concise
-- Exercícios: numbered, printable on paper
-- Gabarito: short; never fabricate official ITA keys
+## Math delimiters (Docsify + KaTeX)
+
+- Inline: `$v = \Delta s / \Delta t$`
+- Display: `$$ s = s_0 + vt $$`
+- Do **not** use `\(...\)` or `\[...\]` (they render as raw text)

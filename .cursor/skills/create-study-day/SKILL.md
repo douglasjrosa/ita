@@ -1,9 +1,9 @@
 ---
 name: create-study-day
 description: >-
-  Creates a new ITA study day Markdown file from templates/day.md and appends
-  a checklist link on the matching FASE_n.md. Use when the producer asks to add
-  a study day, new dia-NN topic, or scaffold a day under fase-n.
+  Creates a new ITA study day folder with teoria.md, exercicios.md, and
+  gabarito.md from templates, then appends a checklist link on FASE_n.md.
+  Use when the producer asks to add a study day or scaffold dia-NN under fase-n.
 disable-model-invocation: true
 ---
 
@@ -15,24 +15,24 @@ disable-model-invocation: true
 - Subject folder (`fisica` | `matematica` | `quimica` | `portugues` | `ingles`)
 - Day number `NN` and kebab `slug`
 - Title and Meta (PT-BR)
-- Optional YouTube URL and draft theory/exercises
+- Optional YouTube URL and draft content
 
 ## Steps
 
-1. Read [templates/day.md](templates/day.md).
-2. Create `fase-<n>/<subject>/dia-NN-slug.md` with required headings.
-3. Fill Meta, Links (YouTube when available), Teoria, Exercícios, Gabarito.
-4. Append a checklist line to `FASE_<n>.md` under the correct subject:
+1. Read `templates/teoria.md`, `templates/exercicios.md`, `templates/gabarito.md`.
+2. Create folder `fase-<n>/<subject>/dia-NN-slug/`.
+3. Write the three files with cross-nav links.
+4. Append to `FASE_<n>.md`:
 
-   `- [ ] [Dia NN — Título](fase-<n>/<subject>/dia-NN-slug.md)`
+   `- [ ] [Dia NN — Título](fase-<n>/<subject>/dia-NN-slug/teoria.md)`
 
 5. Do not create `HOJE.md`. Do not commit unless asked.
 
 ## Checklist
 
 ```
-- [ ] Day file created with required sections
-- [ ] Phase index updated
+- [ ] Folder with teoria.md, exercicios.md, gabarito.md
+- [ ] Phase index points to teoria.md
 - [ ] No PII
-- [ ] Naming matches dia-NN-slug.md
+- [ ] Naming matches dia-NN-slug/
 ```

@@ -4,12 +4,13 @@ Master plan for complementary ITA entrance-exam preparation. Student-facing page
 
 ## Principles
 
-- **Practice over library:** short theory, many paper exercises, clear gabarito notes.
+- **Practice over library:** short `teoria.md`, printable `exercicios.md`, worked `gabarito.md`.
 - **Decoupled from school:** phase checklists are the curriculum spine, not the school calendar.
 - **Pages = consume:** the student reads and prints from Docsify/GitHub Pages only.
 - **Cursor + NotebookLM = factory:** production tools for the parent/producer; not the student’s daily apps.
 - **No PII** in the public repo (no student name, no school name).
 - **No `HOJE.md`:** use perennial `FASE_1.md` / `FASE_2.md` / `FASE_3.md` checklists.
+- **Day = folder:** `fase-n/<subject>/dia-NN-slug/{teoria,exercicios,gabarito}.md`.
 
 ## Phases (high level)
 

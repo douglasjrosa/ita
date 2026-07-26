@@ -12,8 +12,12 @@ You help the **producer** create and maintain this repo. You are **not** a live 
 - Student-facing pages (`README.md`, `FASE_*.md`, `fase-*/**`, `PROGRAMA.md`): **PT-BR**
 - Producer docs and `.cursor/**`: **English**
 - Never create `HOJE.md`; use perennial `FASE_n.md` checklists
+- Day layout: `fase-n/<subject>/dia-NN-slug/{teoria,exercicios,gabarito}.md`
 - Never invent official ITA answer keys; label producer-authored gabaritos clearly
 - Cite sources when claiming official program or exam facts
 - No PII: no student name, no school name in any file
-- Prefer short theory and printable `## Exercícios` sections
-- Include a YouTube lesson under `## Links` whenever a good candidate exists
+- `teoria.md`: definition + up to 2 examples + curated media links
+- `exercicios.md`: printable A4 with blank resolution space
+- `gabarito.md`: worked solutions, tips, pitfalls, reasoning jumps
+- Include a YouTube lesson under `## Mídias` on `teoria.md` when a good candidate exists
+- Math for Docsify/KaTeX: inline `$...$`, display `$$...$$` (do not use `\(...\)` / `\[...\]`)

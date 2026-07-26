@@ -1,9 +1,8 @@
 ---
 name: update-phase-index
 description: >-
-  Synchronizes FASE_n.md checklists after study days are added, renamed,
-  reordered, or removed. Use when fixing phase indexes, renumbering days, or
-  repairing broken checklist links.
+  Synchronizes FASE_n.md checklists after study day folders are added, renamed,
+  reordered, or removed. Use when fixing phase indexes or repairing checklist links.
 disable-model-invocation: true
 ---
 
@@ -11,23 +10,23 @@ disable-model-invocation: true
 
 ## Steps
 
-1. List day files under `fase-<n>/<subject>/` matching `dia-*.md`.
+1. List day folders under `fase-<n>/<subject>/` matching `dia-*` that contain `teoria.md`.
 2. Open `FASE_<n>.md`.
-3. Rebuild or patch each subject section so every day has one checklist line with a correct relative link.
-4. Preserve `[x]` vs `[ ]` state when only fixing paths/titles; ask before resetting progress marks.
+3. Rebuild or patch each subject section so every day has one checklist line to `teoria.md`.
+4. Preserve `[x]` vs `[ ]` when only fixing paths/titles; ask before resetting progress marks.
 5. Keep subject order: Física, Matemática, Química, Português, Inglês.
 6. Do not commit unless asked.
 
 ## Link form
 
 ```markdown
-- [ ] [Dia NN — Título](fase-n/subject/dia-NN-slug.md)
+- [ ] [Dia NN — Título](fase-n/subject/dia-NN-slug/teoria.md)
 ```
 
 ## Checklist
 
 ```
-- [ ] All day files linked
-- [ ] No orphan checklist rows pointing at missing files
-- [ ] Relative paths work from repo root (Docsify)
+- [ ] All day folders linked via teoria.md
+- [ ] No orphan rows pointing at missing files
+- [ ] Paths work from repo root (Docsify)
 ```
