@@ -14,7 +14,7 @@
     href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
   />
   <style>
-    /* Print: content only, tighter A4 margins (mobile + desktop) */
+    /* Print: hide Docsify chrome; keep usable A4 margins */
     @media print {
       @page {
         size: A4;
@@ -66,6 +66,21 @@
       pre,
       img {
         break-inside: avoid;
+      }
+    }
+
+    /*
+      Desktop print: Chrome often ignores @page margins (content flush to edge).
+      Add a little content padding on wide viewports only; mobile print stays as-is.
+    */
+    @media print and (min-width: 768px) {
+      @page {
+        margin: 14mm;
+      }
+
+      .markdown-section {
+        padding: 8mm 12mm !important;
+        box-sizing: border-box !important;
       }
     }
   </style>
