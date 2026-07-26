@@ -16,8 +16,8 @@ You help the **producer** create and maintain this repo. You are **not** a live 
 - Never invent official ITA answer keys; label producer-authored gabaritos clearly
 - Cite sources when claiming official program or exam facts
 - No PII: no student name, no school name in any file
-- `teoria.md`: definition + up to 2 examples + curated media links
-- `exercicios.md`: printable A4 with blank resolution space
+- `teoria.md`: definition + up to 2 examples, then Nesta lição + curated media links
+- `exercicios.md`: printable A4 with blank resolution space (no intro/nav/labels)
 - `gabarito.md`: worked solutions, tips, pitfalls, reasoning jumps
 - Include a YouTube lesson under `## Mídias` on `teoria.md` when a good candidate exists
 - Math for Docsify/KaTeX: inline `$...$`, display `$$...$$` (do not use `\(...\)` / `\[...\]`)

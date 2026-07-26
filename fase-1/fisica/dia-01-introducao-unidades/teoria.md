@@ -2,21 +2,6 @@
 
 **Meta:** reconhecer grandezas físicas, o Sistema Internacional (SI), prefixos e conversões simples usadas em mecânica, e checar coerência dimensional de uma expressão.
 
-## Nesta lição
-
-- [Teoria](teoria.md) (você está aqui)
-- [Exercícios](exercicios.md) — imprimir
-- [Gabarito](gabarito.md) — só depois de tentar
-
-## Mídias
-
-- Vídeoaula (SI — bases): [Sistema Internacional de Unidades (SIU) — Prof. Marcos Rossetto](https://www.youtube.com/watch?v=VultrEX7cVA)
-- Vídeoaula (conversões): [Conversão de unidades na Física — Prof. Luizildo Pittol](https://www.youtube.com/watch?v=AXMXQnGxk3w)
-- Texto (livro aberto): [OpenStax College Physics 2e — 1.2 Physical Quantities and Units](https://openstax.org/books/college-physics-2e/pages/1-2-physical-quantities-and-units)
-- Referência oficial (SI, PT-BR): [Inmetro — Sistema Internacional de Unidades (tradução)](https://www.gov.br/inmetro/pt-br/assuntos/metrologia-cientifica/documentos-tecnicos-em-metrologia/si_versao_final.pdf)
-- Referência oficial (SI, EN): [NIST SP 330 — The International System of Units (2019)](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.330-2019.pdf)
-- Programa do exame: [ITA — programa 2026 (PDF)](https://vestibular.ita.br/programa_2026.pdf)
-
 ## Definição
 
 Uma **grandeza física** é uma propriedade mensurável (comprimento, tempo, massa, …).  
@@ -61,3 +46,18 @@ $$
 
 Em $\mathrm{km/h}$: $20 \times 3{,}6 = 72\,\mathrm{km/h}$  
 (o fator $3{,}6$ vem de $\dfrac{3600\,\mathrm{s/h}}{1000\,\mathrm{m/km}}$).
+
+## Nesta lição
+
+- [Teoria](teoria.md) (você está aqui)
+- [Exercícios](exercicios.md) — imprimir
+- [Gabarito](gabarito.md) — só depois de tentar
+
+## Mídias
+
+- Vídeoaula (SI — bases): [Sistema Internacional de Unidades (SIU) — Prof. Marcos Rossetto](https://www.youtube.com/watch?v=VultrEX7cVA)
+- Vídeoaula (conversões): [Conversão de unidades na Física — Prof. Luizildo Pittol](https://www.youtube.com/watch?v=AXMXQnGxk3w)
+- Texto (livro aberto): [OpenStax College Physics 2e — 1.2 Physical Quantities and Units](https://openstax.org/books/college-physics-2e/pages/1-2-physical-quantities-and-units)
+- Referência oficial (SI, PT-BR): [Inmetro — Sistema Internacional de Unidades (tradução)](https://www.gov.br/inmetro/pt-br/assuntos/metrologia-cientifica/documentos-tecnicos-em-metrologia/si_versao_final.pdf)
+- Referência oficial (SI, EN): [NIST SP 330 — The International System of Units (2019)](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.330-2019.pdf)
+- Programa do exame: [ITA — programa 2026 (PDF)](https://vestibular.ita.br/programa_2026.pdf)

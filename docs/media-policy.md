@@ -50,7 +50,8 @@ Markdown reference (relative path):
 
 ## Docsify
 
-Relative `media/...` paths work when `relativePath` is false **from the day Markdown file’s folder**. Keep images next to the day files as above.
+Relative `media/...` paths work with Docsify `relativePath: true` (resolved
+from the current day Markdown file). Keep images next to the day files as above.
 
 ## Print (A4)
 

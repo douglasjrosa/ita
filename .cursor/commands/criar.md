@@ -36,8 +36,8 @@ Siga templates, rules e skills do projeto. O aluno consome só via GitHub Pages;
 
 3. **Escrever os três arquivos (PT-BR, aluno)**
    - Math: só `$...$` e `$$...$$`.
-   - `teoria.md`: Meta, Mídias, Definição direta, até 2 exemplos; nav para exercícios/gabarito.
-   - `exercicios.md`: imprimível A4, espaços de resolução, sem teoria longa.
+   - `teoria.md`: Meta → Definição → Exemplos (≤2) → Nesta lição → Mídias.
+   - `exercicios.md`: só título + exercícios com espaço em branco (sem intro, sem nav, sem label “Espaço para resolução”).
    - `gabarito.md`: resposta + desenvolvimento + dicas/pegadinhas/saltos; marcar material próprio (não gabarito oficial ITA).
    - Imagens: se necessárias, coloque em `media/` **dentro da pasta do dia** e referencie com caminho relativo (`![desc](media/nome.png)`). Siga `docs/media-policy.md`. Se não puder criar a imagem agora, use `<!-- TODO media: descrição -->` e liste nas Pendências.
 

@@ -30,8 +30,8 @@ fase-n/<subject>/dia-NN-slug/
 
 | File | Content |
 |------|---------|
-| `teoria.md` | Meta, media links (YouTube), definition + up to 2 examples; nav to siblings |
-| `exercicios.md` | Printable A4 exercises with blank resolution space; no long theory |
+| `teoria.md` | Meta → Definição → Exemplos (≤2) → Nesta lição → Mídias |
+| `exercicios.md` | Printable A4: exercises + blank space only (no intro/nav/labels) |
 | `gabarito.md` | Answers + worked solution, tips, pitfalls, reasoning jumps; not official ITA keys |
 
 Phase checklist links point to **`teoria.md`** (day entry).  
@@ -83,9 +83,11 @@ NotebookLM is not a runtime dependency of the site.
 
 This repo serves Docsify from the **repository root** (`index.html` + Markdown).
 
-Docsify uses `relativePath: false` so sidebar links always resolve from the site
-root. Keep sidebar targets root-absolute (e.g. `/README.md`, `/FASE_1.md`).
-Phase checklist links stay as `fase-n/.../teoria.md` from the repo root.
+Docsify uses `relativePath: true` so links inside a day folder
+(`exercicios.md`, `media/...`) resolve next to the current file.
+Keep sidebar targets root-absolute (e.g. `/README.md`, `/FASE_1.md`).
+Phase checklist links stay as `fase-n/.../teoria.md` from the repo root
+(they are opened from `FASE_n.md` at the site root).
 
 1. Create a **public** GitHub repository (recommended for free Pages without GitHub Pro).
 2. Push `main` (or your default branch).

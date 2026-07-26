@@ -20,6 +20,7 @@ alwaysApply: false
 
 ## Rules
 
-- Use paths from repo root (Docsify `relativePath: false`)
+- Use paths from repo root for phase checklists (e.g. `fase-1/fisica/.../teoria.md`)
+- Docsify uses `relativePath: true` for sibling day links; sidebar uses `/FASE_1.md` style roots
 - When adding/renaming/reordering day folders, update `FASE_n.md` in the same change
 - Placeholders for empty subjects are allowed until content exists

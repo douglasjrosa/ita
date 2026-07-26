@@ -20,9 +20,9 @@
     window.$docsify = {
       name: "Estudos ITA",
       loadSidebar: true,
-      // false: sidebar/content links resolve from site root (avoids
-      // #/fase-1/fisica/README when clicking Início from a nested day).
-      relativePath: false,
+      // true: sibling links (teoria ↔ exercicios) resolve in the day folder.
+      // Sidebar keeps root-absolute paths (/README.md, /FASE_1.md, …).
+      relativePath: true,
       alias: {
         "/.*/_sidebar.md": "/_sidebar.md",
       },

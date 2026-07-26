@@ -2,16 +2,6 @@
 
 **Meta:** usar velocidade média e a equação horária do movimento retilíneo uniforme (MRU) em problemas unidimensionais simples.
 
-## Nesta lição
-
-- [Teoria](teoria.md) (você está aqui)
-- [Exercícios](exercicios.md) — imprimir
-- [Gabarito](gabarito.md) — só depois de tentar
-
-## Mídias
-
-- Vídeoaula: [Busque no YouTube: “MRU movimento retilíneo uniforme”](https://www.youtube.com/results?search_query=MRU+movimento+retil%C3%ADneo+uniforme) _(substituir por vídeo curado)_
-
 ## Definição
 
 No **MRU**, a velocidade escalar é constante e a trajetória é uma reta.
@@ -43,3 +33,13 @@ $$
 $$
 \Delta s = 20\,\mathrm{m},\quad t = \frac{20}{5} = 4\,\mathrm{s}
 $$
+
+## Nesta lição
+
+- [Teoria](teoria.md) (você está aqui)
+- [Exercícios](exercicios.md) — imprimir
+- [Gabarito](gabarito.md) — só depois de tentar
+
+## Mídias
+
+- Vídeoaula: [Busque no YouTube: “MRU movimento retilíneo uniforme”](https://www.youtube.com/results?search_query=MRU+movimento+retil%C3%ADneo+uniforme) _(substituir por vídeo curado)_

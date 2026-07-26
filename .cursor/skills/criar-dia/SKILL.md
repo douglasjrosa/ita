@@ -41,8 +41,8 @@ Do **not** require the slug. Resolve it:
 ## Content rules
 
 - Math: `$inline$` / `$$display$$` only
-- Theory: definition + ≤2 examples; curated `## Mídias`
-- Exercises: A4 print gaps; no long theory
+- Theory: Meta → Definição → Exemplos (≤2) → Nesta lição → Mídias
+- Exercises: A4 blank space only (no intro/nav/labels)
 - Gabarito: worked solutions; never fake official ITA keys
 - No PII; no `HOJE.md`
 

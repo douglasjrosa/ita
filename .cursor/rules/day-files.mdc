@@ -19,16 +19,16 @@ Subjects: `fisica`, `matematica`, `quimica`, `portugues`, `ingles`.
 ## `teoria.md`
 
 - Title + **Meta**
-- Nav: Teoria / Exercícios / Gabarito
-- `## Mídias` (YouTube first when possible)
 - `## Definição` (short)
 - `## Exemplos` (up to 2; omit only if not applicable)
+- `## Nesta lição` (nav: Teoria / Exercícios / Gabarito)
+- `## Mídias` (YouTube first when possible)
 - No full exercise lists here
 
 ## `exercicios.md`
 
-- Print-first A4: exercise statement + **Espaço para resolução** + vertical space (`<br>` ok)
-- Link to teoria and gabarito; warn not to open gabarito early
+- Print-first A4: exercise heading + statement + vertical blank space (`<br>` ok)
+- No intro callout, no Teoria/Gabarito nav links, no “Espaço para resolução” label
 - No long theory blocks
 
 ## `gabarito.md`
