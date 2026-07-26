@@ -52,6 +52,10 @@ NotebookLM is not a runtime dependency of the site.
 
 This repo serves Docsify from the **repository root** (`index.html` + Markdown).
 
+Docsify uses `relativePath: false` so sidebar links always resolve from the site
+root. Keep sidebar targets root-absolute (e.g. `/README.md`, `/FASE_1.md`).
+Phase checklist links stay as `fase-n/...` from the repo root.
+
 1. Create a **public** GitHub repository (recommended for free Pages without GitHub Pro).
 2. Push `main` (or your default branch).
 3. GitHub → **Settings** → **Pages** → Source: **Deploy from a branch**.

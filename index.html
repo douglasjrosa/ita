@@ -16,7 +16,12 @@
     window.$docsify = {
       name: "Estudos ITA",
       loadSidebar: true,
-      relativePath: true,
+      // false: sidebar/content links resolve from site root (avoids
+      // #/fase-1/fisica/README when clicking Início from a nested day).
+      relativePath: false,
+      alias: {
+        "/.*/_sidebar.md": "/_sidebar.md",
+      },
       homepage: "README.md",
       auto2top: true,
       maxLevel: 3,
