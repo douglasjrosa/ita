@@ -13,6 +13,62 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
   />
+  <style>
+    /* Print: content only, tighter A4 margins (mobile + desktop) */
+    @media print {
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+
+      html,
+      body {
+        background: #fff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .sidebar,
+      .sidebar-toggle,
+      .search,
+      .app-nav,
+      .github-corner,
+      nav {
+        display: none !important;
+      }
+
+      main,
+      .content,
+      .markdown-section {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: static !important;
+      }
+
+      .markdown-section {
+        font-size: 11pt;
+        line-height: 1.35;
+      }
+
+      a[href]::after {
+        content: none !important;
+      }
+
+      h1,
+      h2,
+      h3,
+      .katex-display,
+      table,
+      pre,
+      img {
+        break-inside: avoid;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="app"></div>

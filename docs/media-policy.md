@@ -58,3 +58,7 @@ from the current day Markdown file). Keep images next to the day files as above.
 - SVG prints cleanly.
 - For PNG, ensure contrast (black lines on white) for B&W printers.
 - Do not rely on color alone to convey meaning.
+- Site print CSS (`index.html` `@media print`) hides the Docsify sidebar and uses
+  ~10 mm page margins so exercise pages use more of the sheet.
+- On phones, also check the print dialog: disable headers/footers if offered,
+  and prefer “A4” paper size.
