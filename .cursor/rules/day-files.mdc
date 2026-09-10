@@ -22,7 +22,7 @@ Subjects: `fisica`, `matematica`, `quimica`, `portugues`, `ingles`.
 - `## Definição` (short)
 - `## Exemplos` (up to 2; omit only if not applicable)
 - `## Nesta lição` (nav: Teoria / Exercícios / Gabarito)
-- `## Mídias` (YouTube first when possible)
+- `## Mídias` (YouTube when possible; **PT-BR vídeoaula first**, English only if none found — see `production-core.mdc`; inglês may use authentic English sources after PT-BR search)
 - No full exercise lists here
 
 ## `exercicios.md`

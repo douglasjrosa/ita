@@ -35,7 +35,8 @@ In Plan mode, wait for confirmation. `/criar` is an explicit commit/push request
 
 ## Per-lesson workflow
 
-Research (ITA program, textbooks, reputable videos). Write/overwrite the three
+Research (ITA program, textbooks, reputable videos; YouTube **PT-BR** first,
+English only if none — see `docs/media-policy.md`). Write/overwrite the three
 PT-BR Markdown files. Local `media/` only when needed; otherwise
 `<!-- TODO media: ... -->`. Never fake official ITA keys. No `HOJE.md`.
 

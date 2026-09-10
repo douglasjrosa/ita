@@ -32,6 +32,17 @@ Markdown reference (relative path):
 | Photo / screenshot | PNG or WebP | Keep width reasonable (~800–1200 px) |
 | Third-party figure | Only if license allows | Prefer Wikimedia Commons / public domain; credit in `media/LICENSE.txt` and in chat sources |
 
+## YouTube vídeoaulas (`## Mídias`)
+
+When curating a lesson video on YouTube:
+
+1. Search for a suitable **Portuguese (PT-BR)** vídeoaula first (serious channels: Boaro, Noslen, OpenStax mirrors in PT, etc.).
+2. Recommend an **English** vídeoaula **only** when no suitable PT-BR lesson exists.
+3. Never invent a `watch?v=` URL; if nothing is verified, leave a pendency for producer curation.
+4. **Inglês** subject days may list authentic English vídeoaulas (e.g. British Council) after the same PT-BR search, when the lesson targets reading or listening in English.
+
+List PT-BR vídeoaulas before English ones in `## Mídias`.
+
 ## What to avoid
 
 - Hotlinking images from random websites (breaks offline/print; copyright risk)

@@ -33,7 +33,7 @@ _(Omit this section only when examples truly do not apply.)_
 
 ## Mídias
 
-- Vídeoaula: [título](https://www.youtube.com/watch?v=VIDEO_ID)
+- Vídeoaula (PT-BR first; English only if no suitable PT-BR lesson — see docs/media-policy.md): [título](https://www.youtube.com/watch?v=VIDEO_ID)
 - (optional extras)
 
 <!-- Math: Docsify-KaTeX needs $...$ and $$...$$, not \(...\) / \[...\]. -->

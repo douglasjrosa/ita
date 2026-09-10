@@ -32,6 +32,7 @@ Para cada TODO de matéria, o fluxo é o mesmo de um dia isolado:
 - Leia rules: produção, day-files, phase-files, repo-safety.
 - Se já existirem `.md`, melhore/substitua mantendo a estrutura; **não** apague pastas vizinhas.
 - Pesquise com fontes reais (programa ITA, livros/apostilas de domínio público, páginas acadêmicas, YouTube de canais sérios). Prefira URL estável. Não invente `watch?v=`; se o vídeo não existir, deixe busca pendente de curadoria.
+- **Vídeoaula no YouTube:** busque primeiro em **português (PT-BR)**; só recomende vídeo em **inglês** se nenhum em português for adequado (exceto dias de **inglês**, onde vídeo autêntico em inglês pode entrar depois da mesma busca em PT-BR).
 - Escreva os três arquivos em **PT-BR**:
   - Math: só `$...$` e `$$...$$`.
   - `teoria.md`: Meta → Definição → Exemplos (≤2) → Nesta lição → Mídias.

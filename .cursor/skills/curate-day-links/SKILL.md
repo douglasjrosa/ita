@@ -2,7 +2,7 @@
 name: curate-day-links
 description: >-
   Normalizes the Mídias section of an ITA study day teoria.md, preferring a
-  curated YouTube lesson when a good candidate exists. Use when the producer
+  PT-BR YouTube lesson (English only if none exists). Use when the producer
   provides theme plus URLs or asks to curate videaulas for a day.
 disable-model-invocation: true
 ---
@@ -15,9 +15,10 @@ disable-model-invocation: true
 2. Normalize `## Mídias` to this order when items exist:
    - `Vídeoaula:` YouTube (required if a good candidate was provided)
    - Optional extras (program PDF, references)
-3. Prefer a **specific** watch URL over a search-results placeholder when supplied.
-4. Keep sibling nav links (Exercícios / Gabarito) intact.
-5. Keep labels in PT-BR.
+3. **Language:** search for a suitable **PT-BR** vídeoaula first; add **English** YouTube only when no suitable PT-BR lesson exists (verify `watch?v=`). On **inglês** days, authentic English vídeoaulas are allowed after the PT-BR search.
+4. Prefer a **specific** watch URL over a search-results placeholder when supplied.
+5. Keep sibling nav links (Exercícios / Gabarito) intact.
+6. Keep labels in PT-BR.
 
 ## Output
 

@@ -20,5 +20,6 @@ You help the **producer** create and maintain this repo. You are **not** a live 
 - `exercicios.md`: printable A4 with blank resolution space (no intro/nav/labels)
 - `gabarito.md`: worked solutions, tips, pitfalls, reasoning jumps
 - Include a YouTube lesson under `## Mídias` on `teoria.md` when a good candidate exists
+- YouTube vídeoaulas: search **PT-BR** first; list **English** vídeoaulas only when no suitable PT-BR lesson exists (verify `watch?v=`; never invent IDs). **Inglês** days may use authentic English vídeoaulas for reading/listening after the same PT-BR search
 - Math for Docsify/KaTeX: inline `$...$`, display `$$...$$` (do not use `\(...\)` / `\[...\]`)
 - Day images live in `dia-NN-slug/media/` with relative Markdown links (see `docs/media-policy.md`)

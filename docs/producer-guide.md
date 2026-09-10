@@ -52,6 +52,10 @@ Templates: `templates/teoria.md`, `templates/exercicios.md`, `templates/gabarito
 
 See [media-policy.md](media-policy.md). Short version: store files in `dia-NN-slug/media/` and link with `![alt](media/file.svg)`. Prefer SVG; no hotlinks; credit licenses.
 
+## YouTube vídeoaulas
+
+In `## Mídias` on `teoria.md`, search **PT-BR** YouTube lessons first; use **English** vídeoaulas only when no suitable Portuguese lesson exists (verify `watch?v=`). **Inglês** days may use authentic English sources after the same PT-BR search. Details: [media-policy.md](media-policy.md).
+
 ## Math (KaTeX via Docsify)
 
 Use `$inline$` and `$$display$$` only. Do not use LaTeX `\(...\)` / `\[...\]` delimiters — Docsify-KaTeX will not render them and `\Delta` will show as raw text.
