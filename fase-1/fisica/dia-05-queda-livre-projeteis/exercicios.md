@@ -26,7 +26,7 @@ Uma pedra é lançada **verticalmente para cima** com $v_0 = 30\,\mathrm{m/s}$.
 
 ## Exercício 3
 
-De uma laje de $45\,\mathrm{m}$ de altura, uma bola é lançada **horizontalmente** com $v_{0x} = 15\,\mathrm{m/s}$.
+De uma laje de $20\,\mathrm{m}$ de altura, uma bola é lançada **horizontalmente** com $v_{0x} = 15\,\mathrm{m/s}$.
 
 (a) Tempo de queda até o solo.  
 (b) Alcance horizontal (distância da base do prédio ao ponto de impacto, solo plano).
@@ -37,7 +37,7 @@ De uma laje de $45\,\mathrm{m}$ de altura, uma bola é lançada **horizontalment
 
 ## Exercício 4
 
-Dois projéteis saem no mesmo instante: A só na vertical (queda livre a partir do repouso) e B em lançamento horizontal, **da mesma altura**. Sem calcular números: o tempo de voo de B é maior, menor ou igual ao de A? Por quê?
+Dois corpos saem no mesmo instante: A só na vertical (queda livre a partir do repouso) e B em lançamento horizontal, **da mesma altura**. Sem calcular números: o tempo de voo de B é maior, menor ou igual ao de A? Por quê?
 
 <br><br><br><br><br><br><br><br>
 
@@ -45,7 +45,7 @@ Dois projéteis saem no mesmo instante: A só na vertical (queda livre a partir 
 
 ## Exercício 5
 
-Um projétil é lançado do solo com $v_0 = 20\,\mathrm{m/s}$ a $45^\circ$ e cai no **mesmo nível**.
+Um projétil é lançado do solo com $v_0 = 24\,\mathrm{m/s}$ a $30^\circ$ e cai no **mesmo nível**.
 
 (a) Alcance $R$.  
 (b) Altura máxima $H$.

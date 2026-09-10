@@ -6,7 +6,9 @@
 
 O programa do ITA (Física, item 2) inclui **movimento de projéteis** junto da cinemática escalar e vetorial. **Queda livre** (ar desprezado) é o caso 1D: só a gravidade atua; a aceleração tem módulo $g$ (cerca de $9{,}8\,\mathrm{m/s^{2}}$; nos exercícios desta lição use $g = 10\,\mathrm{m/s^{2}}$) e aponta para baixo.
 
-O sinal de $a$ depende do eixo: se **para cima** é positivo, $a_y = -g$; se **para baixo** é positivo, $a_y = +g$. No ponto mais alto de um lançamento vertical, $v_y = 0$, mas **$a$ continua sendo $g$** (OpenStax: a aceleração não “desliga” no ápice).
+O sinal de $a$ depende do eixo: se **para cima** é positivo, $a_y = -g$; se **para baixo** é positivo, $a_y = +g$. No ponto mais alto de um lançamento vertical, $v_y = 0$, mas o **módulo** da aceleração continua $g$ (com eixo $y$ para cima: $a_y = -g$) — a gravidade não “desliga” no ápice (OpenStax 2.7).
+
+Na queda livre, a **massa** do corpo não entra: todos caem com a mesma $g$ (ar desprezado).
 
 **Projétil:** objeto lançado e, em seguida, sujeito **só** à gravidade (resistência do ar nula nesta lição). A trajetória no plano é uma **parábola**.
 
@@ -26,6 +28,18 @@ v_{0x} = v_0\cos\theta, \qquad v_{0y} = v_0\sin\theta
 $$
 
 **Lançamento horizontal:** $\theta = 0^\circ$, $v_{0y} = 0$; o tempo de queda sai só do $y$.
+
+**Equações horárias** (origem no lançamento, $t = 0$; eixo $y$ **para cima** positivo, $a_y = -g$):
+
+$$
+x = v_{0x}\,t, \qquad y = v_{0y}\,t - \frac{1}{2}gt^{2}
+$$
+
+$$
+v_x = v_{0x}, \qquad v_y = v_{0y} - gt
+$$
+
+São as do MRU/MRUV (Dia 03) em cada eixo. Altura máxima (oblíquo): com $v_y = 0$, $H = v_{0y}^{2}/(2g)$. No **mesmo nível** de saída e chegada, $t_{\mathrm{voo}} = 2v_{0y}/g$ e $R = v_{0x}\,t_{\mathrm{voo}}$ — origem das fórmulas compactas abaixo.
 
 **Alcance** $R$ (mesmo nível de lançamento e queda, ar nulo):
 
@@ -65,6 +79,7 @@ O tempo de voo é $t = 2v_{0y}/g = 2\sqrt{2}\,\mathrm{s}$ ($v_{0y} = 10\sqrt{2}\
 
 ## Mídias
 
+- Vídeoaula (horizontal, PT): [LANÇAMENTO HORIZONTAL — CINEMÁTICA — Prof. Marcelo Boaro](https://www.youtube.com/watch?v=xVsVK2seM-Y)
 - Vídeoaula (oblíquo, PT): [LANÇAMENTO OBLÍQUO I — CINEMÁTICA — Prof. Marcelo Boaro](https://www.youtube.com/watch?v=V6HvRDDtAKY)
 - Vídeoaula (independência dos eixos): [Projectile motion — Khan Academy](https://www.youtube.com/watch?v=txJP95lBv98)
 - Texto (queda livre 1D): [OpenStax College Physics 2e — 2.7 Falling Objects](https://openstax.org/books/college-physics-2e/pages/2-7-falling-objects)

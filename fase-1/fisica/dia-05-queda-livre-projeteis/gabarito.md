@@ -27,9 +27,9 @@ $$
 
 ## Exercício 2
 
-**Resposta:** (a) $45\,\mathrm{m}$ (b) Não — $a_y$ continua igual a $g$ (para baixo).
+**Resposta:** (a) $45\,\mathrm{m}$ (b) Não — com eixo $y$ para cima, $a_y = -g$ (módulo $g$, para baixo).
 
-**Desenvolvimento:** eixo para cima positivo, $a = -10\,\mathrm{m/s^{2}}$, $v = 0$ no ápice.
+**Desenvolvimento:** eixo para cima positivo, $a_y = -10\,\mathrm{m/s^{2}}$, $v_y = 0$ no ápice.
 
 $$
 0 = 30^{2} + 2(-10)\,\Delta y \implies \Delta y = 45\,\mathrm{m}
@@ -41,12 +41,12 @@ $$
 
 ## Exercício 3
 
-**Resposta:** (a) $3{,}0\,\mathrm{s}$ (b) $45\,\mathrm{m}$
+**Resposta:** (a) $2{,}0\,\mathrm{s}$ (b) $30\,\mathrm{m}$
 
 **Desenvolvimento:** $v_{0y} = 0$; o tempo sai só do $y$ (eixo para baixo):
 
 $$
-45 = 5 t^{2} \implies t = 3{,}0\,\mathrm{s}, \qquad R = v_{0x} t = 15\cdot 3 = 45\,\mathrm{m}
+20 = 5 t^{2} \implies t = 2{,}0\,\mathrm{s}, \qquad R = v_{0x} t = 15\cdot 2 = 30\,\mathrm{m}
 $$
 
 **Salto de raciocínio:** $x$ é MRU; **não** misture $v_{0x}$ na equação de $y$.
@@ -65,17 +65,18 @@ $$
 
 ## Exercício 5
 
-**Resposta:** (a) $R = 40\,\mathrm{m}$ (b) $H = 10\,\mathrm{m}$
+**Resposta:** (a) $R \approx 49{,}9\,\mathrm{m}$ (b) $H = 7{,}2\,\mathrm{m}$
 
-**Desenvolvimento:**
-
-$$
-R = \frac{20^{2}\sin 90^\circ}{10} = 40\,\mathrm{m}
-$$
+**Desenvolvimento:** $v_{0y} = 24\sin 30^\circ = 12\,\mathrm{m/s}$, $v_{0x} = 24\cos 30^\circ = 12\sqrt{3}\,\mathrm{m/s}$.
 
 $$
-v_{0y} = 20\cdot\frac{\sqrt{2}}{2} = 10\sqrt{2}\,\mathrm{m/s}, \qquad
-H = \frac{(10\sqrt{2})^{2}}{20} = 10\,\mathrm{m}
+H = \frac{v_{0y}^{2}}{2g} = \frac{12^{2}}{20} = 7{,}2\,\mathrm{m}
 $$
 
-**Dica:** $\sin 2\cdot 45^\circ = 1$; a fórmula de $R$ exige **mesmo nível** de saída e chegada.
+$$
+R = \frac{v_0^{2}\sin 60^\circ}{g} = \frac{576\cdot\sqrt{3}/2}{10} = \frac{288\sqrt{3}}{10} \approx 49{,}9\,\mathrm{m}
+$$
+
+Conferência: $t_{\mathrm{voo}} = 2v_{0y}/g = 2{,}4\,\mathrm{s}$, $R = v_{0x}\,t_{\mathrm{voo}} = 12\sqrt{3}\cdot 2{,}4 \approx 49{,}9\,\mathrm{m}$.
+
+**Dica:** $\sin(2\cdot 30^\circ)=\sin 60^\circ$; a fórmula de $R$ exige **mesmo nível** de saída e chegada.
