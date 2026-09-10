@@ -83,13 +83,32 @@
         box-sizing: border-box !important;
       }
     }
+
+    /* Version label under the sidebar title (Docsify app name) */
+    .sidebar .app-name-link {
+      display: inline-block;
+      line-height: 1.3;
+    }
+
+    .sidebar .site-version {
+      display: block;
+      margin-top: 0.35em;
+      font-size: 0.72rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #7f8c8d;
+    }
   </style>
 </head>
 <body>
   <div id="app"></div>
   <script>
+    const SITE_VERSION = "1.04";
     window.$docsify = {
-      name: "Estudos ITA",
+      name:
+        "Estudos ITA<br><em class=\"site-version\">Versão " +
+        SITE_VERSION +
+        "</em>",
       loadSidebar: true,
       // true: sibling links (teoria ↔ exercicios) resolve in the day folder.
       // Sidebar keeps root-absolute paths (/README.md, /FASE_1.md, …).
