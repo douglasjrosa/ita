@@ -1,50 +1,48 @@
 ---
 name: criar-dia
 description: >-
-  Researches a study-day topic and writes teoria.md, exercicios.md, and
-  gabarito.md. Use when the user runs /criar or passes a short path like
-  fase-1/fisica/dia-01 (day number only; resolve the full dia-NN-slug folder).
+  Advances the next pending lesson per subject using index.json. Use when the
+  user runs /criar with no path argument.
 disable-model-invocation: true
 ---
 
-# Create curated day content (`/criar`)
+# Create the next pending day pack (`/criar`)
 
 ## Input
 
-Short path only: `fase-n/<subject>/dia-NN`  
-Example: `fase-1/fisica/dia-01`
+No path. Read `index.json` at the repo root.
 
-Do **not** require the slug. Resolve it:
+For each subject in this order — `fisica`, `ingles`, `matematica`, `portugues`,
+`quimica` — pick the first `"pendente"` lesson, scanning `fase-1` then
+`fase-2` then `fase-3`. Skip a subject if nothing is pending.
 
-1. Glob `fase-n/<subject>/dia-NN-*`
-2. Expect exactly one folder; stop if zero or ambiguous
-3. Use that folder + matching row in `docs/curriculum-map.md`
+## Plan first
 
-## Read first
+Create TODOs before writing files:
 
-- `templates/teoria.md`
-- `templates/exercicios.md`
-- `templates/gabarito.md`
-- `docs/curriculum-map.md` (row for this day)
-- `docs/producer-guide.md` and `docs/media-policy.md`
-- Existing files in the resolved folder (if any)
+1. One TODO per subject (resolved `fase-n/<subject>/dia-NN-slug/`).
+2. Last TODO: set those lessons to `"feito"` in `index.json`, then commit and
+   push to production (`origin/main`; also `origin/master` if it exists).
 
-## Workflow
+In Plan mode, wait for confirmation. `/criar` is an explicit commit/push request.
 
-1. Resolve short path → full `dia-NN-slug` directory.
-2. Research with live web tools when possible (ITA program, textbooks, reputable videos).
-3. Write/overwrite the three Markdown files in PT-BR for the student.
-4. Add local images under `media/` only when needed; otherwise `<!-- TODO media: ... -->`.
-5. Do not commit unless asked.
-6. End the chat reply with: resolved path, files written, numbered sources, NotebookLM suggestions, pendencies.
+## Read
 
-## Content rules
+- `templates/teoria.md`, `templates/exercicios.md`, `templates/gabarito.md`
+- Matching row in `docs/curriculum-map.md` and `FASE_n.md`
+- `docs/producer-guide.md`, `docs/media-policy.md`
+- Existing files in the day folder (if any)
 
-- Math: `$inline$` / `$$display$$` only
-- Theory: Meta → Definição → Exemplos (≤2) → Nesta lição → Mídias
-- Exercises: A4 blank space only (no intro/nav/labels)
-- Gabarito: worked solutions; never fake official ITA keys
-- No PII; no `HOJE.md`
+## Per-lesson workflow
+
+Research (ITA program, textbooks, reputable videos). Write/overwrite the three
+PT-BR Markdown files. Local `media/` only when needed; otherwise
+`<!-- TODO media: ... -->`. Never fake official ITA keys. No `HOJE.md`.
+
+## Chat reply
+
+Per subject: path, files, numbered sources, NotebookLM suggestions, pendencies.
+Then: `index.json` keys changed, commit SHA, remotes pushed.
 
 ## Related
 

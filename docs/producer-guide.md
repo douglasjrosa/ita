@@ -41,9 +41,11 @@ Templates: `templates/teoria.md`, `templates/exercicios.md`, `templates/gabarito
 
 ## Generating a day (`/criar`)
 
-1. In Agent chat, type `/criar` and pass the **short** path, e.g. `fase-1/fisica/dia-01`
-   (day number only; the agent resolves `dia-01-*` to the full folder slug).
-2. The agent researches sources, writes the three Markdown files, and lists sources in chat for NotebookLM review.
+1. In Agent chat, type `/criar` with **no path**. The agent reads `index.json`,
+   plans one TODO per subject (`fisica`, `ingles`, `matematica`, `portugues`,
+   `quimica`), and writes the next `"pendente"` lesson in each.
+2. After the five packs, it marks those lessons `"feito"` in `index.json` and
+   commits + pushes to production (`origin/main`).
 3. Command file: `.cursor/commands/criar.md`. Skill: `.cursor/skills/criar-dia/`.
 
 ## Images and figures
@@ -73,7 +75,7 @@ NotebookLM is not a runtime dependency of the site.
 
 | Skill | Use when |
 |-------|----------|
-| `/criar` | Generate/replace full day content (teoria + exercícios + gabarito) from research |
+| `/criar` | Next pending lesson per subject from `index.json`; then commit/push to production |
 | `/create-study-day` | Scaffold empty day folder + phase checklist line only |
 | `/curate-day-links` | Normalize `## Mídias` on `teoria.md` |
 | `/notebooklm-to-day` | Format NotebookLM paste into the three day files |

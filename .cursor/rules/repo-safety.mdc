@@ -6,6 +6,6 @@ alwaysApply: true
 # Repo safety
 
 - Do not delete `fase-*` trees, `templates/`, `FASE_*.md`, or Docsify root files unless the user explicitly asks
-- Do not commit or push unless the user explicitly asks
+- Do not commit or push unless the user explicitly asks (the `/criar` command counts as that ask: commit and push to production at the end of the pack)
 - Prefer additive edits; ask before large renames that break phase checklist links
 - Keep GitHub Pages entrypoints intact: `index.html`, `_sidebar.md`, `.nojekyll`
