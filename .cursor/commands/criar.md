@@ -20,7 +20,7 @@ Matérias (nessa ordem, sempre as cinco):
 4. **Crie um plano** com TODOs (`TodoWrite`; `CreatePlan` se a sessão estiver em Plan mode):
    - Uma TODO **por matéria** (as cinco, na ordem acima), cada uma apontando pasta completa, título e trio `teoria.md` / `exercicios.md` / `gabarito.md`.
    - Se uma matéria **não** tiver nenhum `"pendente"` em nenhuma fase: TODO cancelada ou nota no plano (“nada pendente”) — não invente dia.
-   - **Última TODO** (depois das matérias): atualizar `index.json` (`pendente` → `"feito"` só nas lições desta leva) **e** commit + push para **produção**.
+   - **Última TODO** (depois das matérias): atualizar `index.json` (`pendente` → `"feito"` só nas lições desta leva), rodar `python3 scripts/sync-fase-checkboxes.py` (marca `[x]` em `FASE_*.md` conforme o índice) **e** commit + push para **produção**.
 5. Em Plan mode: apresente o plano e **espere confirmação** antes de escrever os `.md`.
 6. Em Agent mode: grave as TODOs e execute na mesma ordem (matérias, depois índice + git).
 
@@ -48,9 +48,10 @@ Não criar: `HOJE.md`, skills de tutor do aluno, gabaritos oficiais inventados d
 Só depois das matérias desta leva:
 
 1. Em `index.json`, troque `"pendente"` por `"feito"` **apenas** nas lições realmente geradas neste `/criar`.
-2. **Commit** com mensagem descritiva em inglês (ex.: o que cada matéria avançou).
-3. **Push para produção:** `origin/main`. Se `origin/master` existir, envie o mesmo commit para lá também.
-4. `/criar` **já é** o pedido explícito de commit/push (exceção à regra geral de não commitar sem pedir).
+2. Rode `python3 scripts/sync-fase-checkboxes.py` para alinhar as checkboxes de `FASE_1.md`, `FASE_2.md` e `FASE_3.md` ao índice (lições `"feito"` → `[x]`).
+3. **Commit** com mensagem descritiva em inglês (ex.: o que cada matéria avançou).
+4. **Push para produção:** `origin/main`. Se `origin/master` existir, envie o mesmo commit para lá também.
+5. `/criar` **já é** o pedido explícito de commit/push (exceção à regra geral de não commitar sem pedir).
 
 Não espere um segundo “commit e push” no chat.
 
@@ -65,7 +66,7 @@ PT-BR. Um bloco por matéria gerada, depois git:
 Para cada uma: arquivos gerados; fontes numeradas (título, URL ou obra, tipo, o que foi aproveitado); 3–6 sugestões NotebookLM; pendências.
 
 ### Índice e git
-- chaves de `index.json` alteradas
+- chaves de `index.json` alteradas e `FASE_*.md` sincronizados (`sync-fase-checkboxes.py`)
 - SHA do commit e branches remotas atualizadas (`main` / `master`)
 
 ## Critério de qualidade

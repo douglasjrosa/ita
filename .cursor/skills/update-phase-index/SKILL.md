@@ -13,7 +13,10 @@ disable-model-invocation: true
 1. List day folders under `fase-<n>/<subject>/` matching `dia-*` that contain `teoria.md`.
 2. Open `FASE_<n>.md`.
 3. Rebuild or patch each subject section so every day has one checklist line to `teoria.md`.
-4. Preserve `[x]` vs `[ ]` when only fixing paths/titles; ask before resetting progress marks.
+4. For `[x]` vs `[ ]`, use `index.json` as source of truth: run
+   `python3 scripts/sync-fase-checkboxes.py` after changing lesson status or
+   rebuilding rows. When only fixing paths/titles, re-run the script instead of
+   hand-editing checkboxes.
 5. Keep subject order: Física, Matemática, Química, Português, Inglês.
 6. Do not commit unless asked.
 

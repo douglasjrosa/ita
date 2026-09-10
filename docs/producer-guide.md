@@ -63,7 +63,7 @@ Use `$inline$` and `$$display$$` only. Do not use LaTeX `\(...\)` / `\[...\]` de
 ## Phase index contract
 
 `FASE_n.md` is perennial: task-list checkboxes + links to each day’s `teoria.md`.  
-“What next?” = first unchecked item. Update the index whenever you add, rename, or reorder days (skill: `update-phase-index`).
+“What next?” = first unchecked item. Checkbox marks are driven by `index.json` (`"feito"` → `[x]`): run `python3 scripts/sync-fase-checkboxes.py` after `/criar` or when lesson status changes. Update the index whenever you add, rename, or reorder days (skill: `update-phase-index`).
 
 ## NotebookLM protocol (production only)
 

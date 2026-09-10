@@ -21,8 +21,9 @@ For each subject in this order — `fisica`, `ingles`, `matematica`, `portugues`
 Create TODOs before writing files:
 
 1. One TODO per subject (resolved `fase-n/<subject>/dia-NN-slug/`).
-2. Last TODO: set those lessons to `"feito"` in `index.json`, then commit and
-   push to production (`origin/main`; also `origin/master` if it exists).
+2. Last TODO: set those lessons to `"feito"` in `index.json`, run
+   `python3 scripts/sync-fase-checkboxes.py`, then commit and push to production
+   (`origin/main`; also `origin/master` if it exists).
 
 In Plan mode, wait for confirmation. `/criar` is an explicit commit/push request.
 

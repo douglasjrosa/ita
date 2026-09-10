@@ -9,11 +9,11 @@ Mapa completo (produtor): [docs/curriculum-map.md](docs/curriculum-map.md).
 ## Física
 
 - [x] [Dia 01 — Introdução e unidades](fase-1/fisica/dia-01-introducao-unidades/teoria.md)
-- [ ] [Dia 02 — MRU](fase-1/fisica/dia-02-mru/teoria.md)
-- [ ] [Dia 03 — MRUV](fase-1/fisica/dia-03-mruv/teoria.md)
-- [ ] [Dia 04 — Vetores e cinemática vetorial](fase-1/fisica/dia-04-vetores-cinematica-vetorial/teoria.md)
-- [ ] [Dia 05 — Queda livre e projéteis](fase-1/fisica/dia-05-queda-livre-projeteis/teoria.md)
-- [ ] [Dia 06 — MCU — cinemática circular](fase-1/fisica/dia-06-mcu-cinematica-circular/teoria.md)
+- [x] [Dia 02 — MRU](fase-1/fisica/dia-02-mru/teoria.md)
+- [x] [Dia 03 — MRUV](fase-1/fisica/dia-03-mruv/teoria.md)
+- [x] [Dia 04 — Vetores e cinemática vetorial](fase-1/fisica/dia-04-vetores-cinematica-vetorial/teoria.md)
+- [x] [Dia 05 — Queda livre e projéteis](fase-1/fisica/dia-05-queda-livre-projeteis/teoria.md)
+- [x] [Dia 06 — MCU — cinemática circular](fase-1/fisica/dia-06-mcu-cinematica-circular/teoria.md)
 - [ ] [Dia 07 — Estática de partículas](fase-1/fisica/dia-07-estatica-particulas/teoria.md)
 - [ ] [Dia 08 — Estática de corpo rígido](fase-1/fisica/dia-08-estatica-corpo-rigido/teoria.md)
 - [ ] [Dia 09 — Leis de Newton — dinâmica retilínea](fase-1/fisica/dia-09-leis-newton-dinamica-retilinea/teoria.md)
@@ -29,12 +29,12 @@ Mapa completo (produtor): [docs/curriculum-map.md](docs/curriculum-map.md).
 
 ## Matemática
 
-- [ ] [Dia 01 — Conjuntos numéricos](fase-1/matematica/dia-01-conjuntos-numericos/teoria.md)
-- [ ] [Dia 02 — Divisibilidade, primos e TFA](fase-1/matematica/dia-02-divisibilidade-primos-tfa/teoria.md)
-- [ ] [Dia 03 — Indução e princípio das gavetas (intro)](fase-1/matematica/dia-03-inducao-gavetas-intro/teoria.md)
-- [ ] [Dia 04 — Sequências e PA](fase-1/matematica/dia-04-sequencias-pa/teoria.md)
-- [ ] [Dia 05 — PG e soma infinita](fase-1/matematica/dia-05-pg-soma-infinita/teoria.md)
-- [ ] [Dia 06 — Funções — conceito](fase-1/matematica/dia-06-funcoes-conceito/teoria.md)
+- [x] [Dia 01 — Conjuntos numéricos](fase-1/matematica/dia-01-conjuntos-numericos/teoria.md)
+- [x] [Dia 02 — Divisibilidade, primos e TFA](fase-1/matematica/dia-02-divisibilidade-primos-tfa/teoria.md)
+- [x] [Dia 03 — Indução e princípio das gavetas (intro)](fase-1/matematica/dia-03-inducao-gavetas-intro/teoria.md)
+- [x] [Dia 04 — Sequências e PA](fase-1/matematica/dia-04-sequencias-pa/teoria.md)
+- [x] [Dia 05 — PG e soma infinita](fase-1/matematica/dia-05-pg-soma-infinita/teoria.md)
+- [x] [Dia 06 — Funções — conceito](fase-1/matematica/dia-06-funcoes-conceito/teoria.md)
 - [ ] [Dia 07 — Função afim e inequações](fase-1/matematica/dia-07-funcao-afim-inequacoes/teoria.md)
 - [ ] [Dia 08 — Função quadrática](fase-1/matematica/dia-08-funcao-quadratica/teoria.md)
 - [ ] [Dia 09 — Função modular](fase-1/matematica/dia-09-funcao-modular/teoria.md)
@@ -52,12 +52,12 @@ Mapa completo (produtor): [docs/curriculum-map.md](docs/curriculum-map.md).
 
 ## Química
 
-- [ ] [Dia 01 — Introdução, método e matéria](fase-1/quimica/dia-01-introducao-metodo-materia/teoria.md)
-- [ ] [Dia 02 — Misturas e separação](fase-1/quimica/dia-02-misturas-separacao/teoria.md)
-- [ ] [Dia 03 — Tabela periódica](fase-1/quimica/dia-03-tabela-periodica/teoria.md)
-- [ ] [Dia 04 — Modelos atômicos](fase-1/quimica/dia-04-modelos-atomicos/teoria.md)
-- [ ] [Dia 05 — Mol, gases e Avogadro](fase-1/quimica/dia-05-mol-gases-avogadro/teoria.md)
-- [ ] [Dia 06 — Ligações químicas](fase-1/quimica/dia-06-ligacoes-quimicas/teoria.md)
+- [x] [Dia 01 — Introdução, método e matéria](fase-1/quimica/dia-01-introducao-metodo-materia/teoria.md)
+- [x] [Dia 02 — Misturas e separação](fase-1/quimica/dia-02-misturas-separacao/teoria.md)
+- [x] [Dia 03 — Tabela periódica](fase-1/quimica/dia-03-tabela-periodica/teoria.md)
+- [x] [Dia 04 — Modelos atômicos](fase-1/quimica/dia-04-modelos-atomicos/teoria.md)
+- [x] [Dia 05 — Mol, gases e Avogadro](fase-1/quimica/dia-05-mol-gases-avogadro/teoria.md)
+- [x] [Dia 06 — Ligações químicas](fase-1/quimica/dia-06-ligacoes-quimicas/teoria.md)
 - [ ] [Dia 07 — Geometria, polaridade e intermoleculares](fase-1/quimica/dia-07-geometria-polaridade-intermoleculares/teoria.md)
 - [ ] [Dia 08 — Soluções e concentrações](fase-1/quimica/dia-08-solucoes-concentracoes/teoria.md)
 - [ ] [Dia 09 — Estequiometria — balanceamento](fase-1/quimica/dia-09-estequiometria-balanceamento/teoria.md)
@@ -73,12 +73,12 @@ Mapa completo (produtor): [docs/curriculum-map.md](docs/curriculum-map.md).
 
 ## Português
 
-- [ ] [Dia 01 — Morfologia — estrutura das palavras](fase-1/portugues/dia-01-morfologia-estrutura/teoria.md)
-- [ ] [Dia 02 — Classes e flexão](fase-1/portugues/dia-02-classes-flexao/teoria.md)
-- [ ] [Dia 03 — Sintaxe — termos da oração](fase-1/portugues/dia-03-sintaxe-termos-oracao/teoria.md)
-- [ ] [Dia 04 — Período simples e composto (intro)](fase-1/portugues/dia-04-periodo-simples-composto-intro/teoria.md)
-- [ ] [Dia 05 — Pontuação prática](fase-1/portugues/dia-05-pontuacao-pratica/teoria.md)
-- [ ] [Dia 06 — Concordância (intro)](fase-1/portugues/dia-06-concordancia-intro/teoria.md)
+- [x] [Dia 01 — Morfologia — estrutura das palavras](fase-1/portugues/dia-01-morfologia-estrutura/teoria.md)
+- [x] [Dia 02 — Classes e flexão](fase-1/portugues/dia-02-classes-flexao/teoria.md)
+- [x] [Dia 03 — Sintaxe — termos da oração](fase-1/portugues/dia-03-sintaxe-termos-oracao/teoria.md)
+- [x] [Dia 04 — Período simples e composto (intro)](fase-1/portugues/dia-04-periodo-simples-composto-intro/teoria.md)
+- [x] [Dia 05 — Pontuação prática](fase-1/portugues/dia-05-pontuacao-pratica/teoria.md)
+- [x] [Dia 06 — Concordância (intro)](fase-1/portugues/dia-06-concordancia-intro/teoria.md)
 - [ ] [Dia 07 — Regência e crase (intro)](fase-1/portugues/dia-07-regencia-crase-intro/teoria.md)
 - [ ] [Dia 08 — Leitura — gêneros e inferências](fase-1/portugues/dia-08-leitura-generos-inferencias/teoria.md)
 - [ ] [Dia 09 — Semântica básica](fase-1/portugues/dia-09-semantica-basica/teoria.md)
@@ -86,12 +86,12 @@ Mapa completo (produtor): [docs/curriculum-map.md](docs/curriculum-map.md).
 
 ## Inglês
 
-- [ ] [Dia 01 — Leitura global (gist)](fase-1/ingles/dia-01-leitura-global/teoria.md)
-- [ ] [Dia 02 — Vocabulário em contexto](fase-1/ingles/dia-02-vocabulario-em-contexto/teoria.md)
-- [ ] [Dia 03 — Estruturas básicas para leitura](fase-1/ingles/dia-03-estruturas-basicas-leitura/teoria.md)
-- [ ] [Dia 04 — Skimming e scanning](fase-1/ingles/dia-04-skimming-scanning/teoria.md)
-- [ ] [Dia 05 — Inferência (intro)](fase-1/ingles/dia-05-inferencia-intro/teoria.md)
-- [ ] [Dia 06 — Textos curtos — prática](fase-1/ingles/dia-06-textos-curtos-pratica/teoria.md)
+- [x] [Dia 01 — Leitura global (gist)](fase-1/ingles/dia-01-leitura-global/teoria.md)
+- [x] [Dia 02 — Vocabulário em contexto](fase-1/ingles/dia-02-vocabulario-em-contexto/teoria.md)
+- [x] [Dia 03 — Estruturas básicas para leitura](fase-1/ingles/dia-03-estruturas-basicas-leitura/teoria.md)
+- [x] [Dia 04 — Skimming e scanning](fase-1/ingles/dia-04-skimming-scanning/teoria.md)
+- [x] [Dia 05 — Inferência (intro)](fase-1/ingles/dia-05-inferencia-intro/teoria.md)
+- [x] [Dia 06 — Textos curtos — prática](fase-1/ingles/dia-06-textos-curtos-pratica/teoria.md)
 - [ ] [Dia 07 — Expressões idiomáticas (intro)](fase-1/ingles/dia-07-idiomas-intro/teoria.md)
 - [ ] [Dia 08 — Tirinhas e legendas (intro)](fase-1/ingles/dia-08-tirinhas-legendas-intro/teoria.md)
 - [ ] [Dia 09 — Síntese de ideias principais](fase-1/ingles/dia-09-sintese-ideias-principais/teoria.md)

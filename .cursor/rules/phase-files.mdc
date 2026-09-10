@@ -23,4 +23,5 @@ alwaysApply: false
 - Use paths from repo root for phase checklists (e.g. `fase-1/fisica/.../teoria.md`)
 - Docsify uses `relativePath: true` for sibling day links; sidebar uses `/FASE_1.md` style roots
 - When adding/renaming/reordering day folders, update `FASE_n.md` in the same change
+- Checkbox marks (`[x]` / `[ ]`) follow `index.json` (`"feito"` / `"pendente"`); sync with `python3 scripts/sync-fase-checkboxes.py` (also run after each `/criar`)
 - Placeholders for empty subjects are allowed until content exists
