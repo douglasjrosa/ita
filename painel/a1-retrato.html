@@ -42,13 +42,32 @@
     .sheet {
       position: absolute;
       z-index: 1;
+      isolation: isolate;
       width: 201.220mm;
       padding: 2.60mm;
-      background-color: rgba(255, 255, 255, 0.72);
+      background-color: transparent;
+      color: #111;
+      opacity: 1;
       border: 0.18mm solid rgba(60, 48, 32, 0.18);
       border-radius: 1.8mm;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
+    }
+    .sheet::before,
+    .footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: #fff;
+      opacity: 0.72;
+      border-radius: inherit;
+      pointer-events: none;
+    }
+    .sheet > *,
+    .footer > * {
+      position: relative;
+      z-index: 1;
     }
     .brand-row {
       display: flex;
@@ -89,16 +108,16 @@
     }
     .key-name {
       font-family: "Liberation Sans", Arial, sans-serif;
-      font-size: 1.45mm;
+      font-size: 1.95mm;
       line-height: 1.12;
       text-align: center;
-      color: #333;
+      color: #111;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       line-clamp: 2;
       overflow: hidden;
-      max-height: 3.3mm;
+      max-height: 4.4mm;
     }
     .brand .subject {
       font-style: italic;
@@ -116,8 +135,8 @@
       align-items: stretch;
     }
     .topic-break {
-      padding-left: 1.485mm;
-      border-left: 0.208mm solid #ccc;
+      padding-left: 1.7mm;
+      border-left: 0.42mm solid #1a1a1a;
     }
     .topic {
       display: flex;
@@ -167,7 +186,7 @@
       padding: 0.20mm 0.45mm;
     }
     .marks .game-icon {
-      opacity: 0.5;
+      opacity: 1;
       filter: grayscale(100%);
     }
     .game-icon {
@@ -197,11 +216,14 @@
     .footer {
       position: absolute;
       z-index: 1;
+      isolation: isolate;
       left: 30.0mm;
       right: 30.0mm;
       bottom: 30.0mm;
       padding: 3.2mm 3.4mm 3.0mm;
-      background-color: rgba(255, 255, 255, 0.72);
+      background-color: transparent;
+      color: #111;
+      opacity: 1;
       border: 0.18mm solid rgba(60, 48, 32, 0.18);
       border-radius: 1.8mm;
       -webkit-print-color-adjust: exact;
