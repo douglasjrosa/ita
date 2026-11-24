@@ -36,7 +36,7 @@
     .backdrop img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: fill;
       display: block;
     }
     .sheet {
@@ -44,20 +44,61 @@
       z-index: 1;
       width: 201.220mm;
       padding: 2.60mm;
-      background-color: rgba(255, 255, 255, 0.88);
+      background-color: rgba(255, 255, 255, 0.72);
       border: 0.18mm solid rgba(60, 48, 32, 0.18);
       border-radius: 1.8mm;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
-    .brand {
+    .brand-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2.2mm;
       margin: 0 0 1.6mm;
-      padding: 0 0 1.6mm;
+      padding: 0 0 1.4mm;
       border-bottom: 0.32mm solid #111;
-      font-size: 6.50mm;
-      line-height: 1.15;
+    }
+    .brand {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 5.40mm;
+      line-height: 1.12;
       font-weight: 400;
-      white-space: nowrap;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+    .key {
+      display: grid;
+      grid-template-columns: repeat(4, 12.4mm);
+      column-gap: 0.8mm;
+      flex: 0 0 auto;
+    }
+    .key-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35mm;
+      min-width: 0;
+    }
+    .key-item .game-icon {
+      width: 6.20mm;
+      height: 6.20mm;
+      opacity: 1;
+    }
+    .key-name {
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-size: 1.45mm;
+      line-height: 1.12;
+      text-align: center;
+      color: #333;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
+      max-height: 3.3mm;
     }
     .brand .subject {
       font-style: italic;
@@ -113,6 +154,7 @@
       grid-template-columns: repeat(4, 1fr);
       align-items: center;
       justify-items: center;
+      column-gap: 0.55mm;
       border-bottom: 0.178mm solid #ddd;
       min-height: 8.50mm;
     }
@@ -122,6 +164,10 @@
       align-items: center;
       justify-content: center;
       gap: 0.25mm;
+      padding: 0.20mm 0.45mm;
+    }
+    .marks .game-icon {
+      opacity: 0.5;
     }
     .game-icon {
       width: 6.20mm;
@@ -153,8 +199,8 @@
       left: 30.0mm;
       right: 30.0mm;
       bottom: 30.0mm;
-      padding: 2.4mm 3mm 2.2mm;
-      background-color: rgba(255, 255, 255, 0.88);
+      padding: 3.2mm 3.4mm 3.0mm;
+      background-color: rgba(255, 255, 255, 0.72);
       border: 0.18mm solid rgba(60, 48, 32, 0.18);
       border-radius: 1.8mm;
       -webkit-print-color-adjust: exact;
@@ -164,22 +210,23 @@
       font-family: "Liberation Sans", Arial, sans-serif;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.040mm 2.079mm;
-      font-size: 2.020mm;
+      gap: 1.6mm 2.4mm;
+      font-size: 4.04mm;
       line-height: 1.22;
       align-items: center;
     }
     .leg {
       display: flex;
       align-items: center;
-      gap: 0.891mm;
+      gap: 1.6mm;
       min-width: 0;
     }
     .leg div { min-width: 0; }
     .leg .game-icon {
-      width: 5.20mm;
-      height: 5.20mm;
+      width: 10.40mm;
+      height: 10.40mm;
       flex: 0 0 auto;
+      opacity: 1;
     }
 </style>
 </head>
@@ -189,7 +236,10 @@
       <img src="media/stardew-mountain.jpg" alt="">
     </div>
     <section class="sheet" data-subject="fis-fundacao" style="left:30.00mm;top:576.00mm;">
-      <h1 class="brand"><span class="subject">Física</span> – <span class="level">Fundação</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Física</span> – <span class="level">Fundação</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/fis-fundacao-1.png" alt=""><span class="key-name">Coal</span></div><div class="key-item"><img class="game-icon" src="../game-items/fis-fundacao-2.png" alt=""><span class="key-name">Copper Bar</span></div><div class="key-item"><img class="game-icon" src="../game-items/fis-fundacao-3.png" alt=""><span class="key-name">Iron Bar</span></div><div class="key-item"><img class="game-icon" src="../game-items/fis-fundacao-4.png" alt=""><span class="key-name">Battery Pack</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Introdução e unidades</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/fis-fundacao-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/fis-fundacao-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/fis-fundacao-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/fis-fundacao-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -230,7 +280,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="mat-fundacao" style="left:362.78mm;top:548.00mm;">
-      <h1 class="brand"><span class="subject">Matemática</span> – <span class="level">Fundação</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Matemática</span> – <span class="level">Fundação</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/mat-fundacao-1.png" alt=""><span class="key-name">Topaz</span></div><div class="key-item"><img class="game-icon" src="../game-items/mat-fundacao-2.png" alt=""><span class="key-name">Amethyst</span></div><div class="key-item"><img class="game-icon" src="../game-items/mat-fundacao-3.png" alt=""><span class="key-name">Aquamarine</span></div><div class="key-item"><img class="game-icon" src="../game-items/mat-fundacao-4.png" alt=""><span class="key-name">Emerald</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Conjuntos numéricos</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/mat-fundacao-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/mat-fundacao-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/mat-fundacao-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/mat-fundacao-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -275,7 +328,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="qui-fundacao" style="left:30.00mm;top:680.00mm;">
-      <h1 class="brand"><span class="subject">Química</span> – <span class="level">Fundação</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Química</span> – <span class="level">Fundação</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/qui-fundacao-1.png" alt=""><span class="key-name">Sap</span></div><div class="key-item"><img class="game-icon" src="../game-items/qui-fundacao-2.png" alt=""><span class="key-name">Geode</span></div><div class="key-item"><img class="game-icon" src="../game-items/qui-fundacao-3.png" alt=""><span class="key-name">Energy Tonic</span></div><div class="key-item"><img class="game-icon" src="../game-items/qui-fundacao-4.png" alt=""><span class="key-name">Life Elixir</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Introdução, método e matéria</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/qui-fundacao-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/qui-fundacao-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/qui-fundacao-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/qui-fundacao-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -316,7 +372,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="por-fundacao" style="left:362.78mm;top:662.00mm;">
-      <h1 class="brand"><span class="subject">Português</span> – <span class="level">Fundação</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Português</span> – <span class="level">Fundação</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/por-fundacao-1.png" alt=""><span class="key-name">Soggy Newspaper</span></div><div class="key-item"><img class="game-icon" src="../game-items/por-fundacao-2.png" alt=""><span class="key-name">Duck Feather</span></div><div class="key-item"><img class="game-icon" src="../game-items/por-fundacao-3.png" alt=""><span class="key-name">Dwarf Scroll I</span></div><div class="key-item"><img class="game-icon" src="../game-items/por-fundacao-4.png" alt=""><span class="key-name">Lost Book</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Morfologia — estrutura das palavras</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/por-fundacao-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/por-fundacao-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/por-fundacao-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/por-fundacao-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -341,7 +400,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="ing-fundacao" style="left:362.78mm;top:728.00mm;">
-      <h1 class="brand"><span class="subject">Inglês</span> – <span class="level">Fundação</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Inglês</span> – <span class="level">Fundação</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/ing-fundacao-1.png" alt=""><span class="key-name">Driftwood</span></div><div class="key-item"><img class="game-icon" src="../game-items/ing-fundacao-2.png" alt=""><span class="key-name">Nautilus Shell</span></div><div class="key-item"><img class="game-icon" src="../game-items/ing-fundacao-3.png" alt=""><span class="key-name">Anchor</span></div><div class="key-item"><img class="game-icon" src="../game-items/ing-fundacao-4.png" alt=""><span class="key-name">Treasure Chest</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Leitura global (gist)</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/ing-fundacao-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/ing-fundacao-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/ing-fundacao-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/ing-fundacao-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -366,7 +428,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="fis-aprofundamento" style="left:30.00mm;top:292.00mm;">
-      <h1 class="brand"><span class="subject">Física</span> – <span class="level">Aprofundamento</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Física</span> – <span class="level">Aprofundamento</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/fis-aprofundamento-1.png" alt=""><span class="key-name">Gold Bar</span></div><div class="key-item"><img class="game-icon" src="../game-items/fis-aprofundamento-2.png" alt=""><span class="key-name">Refined Quartz</span></div><div class="key-item"><img class="game-icon" src="../game-items/fis-aprofundamento-3.png" alt=""><span class="key-name">Galaxy Soul</span></div><div class="key-item"><img class="game-icon" src="../game-items/fis-aprofundamento-4.png" alt=""><span class="key-name">Iridium Bar</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">MHS e pêndulo</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/fis-aprofundamento-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/fis-aprofundamento-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/fis-aprofundamento-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/fis-aprofundamento-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -411,7 +476,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="mat-aprofundamento" style="left:362.78mm;top:318.00mm;">
-      <h1 class="brand"><span class="subject">Matemática</span> – <span class="level">Aprofundamento</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Matemática</span> – <span class="level">Aprofundamento</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/mat-aprofundamento-1.png" alt=""><span class="key-name">Rusty Cog</span></div><div class="key-item"><img class="game-icon" src="../game-items/mat-aprofundamento-2.png" alt=""><span class="key-name">Rare Disc</span></div><div class="key-item"><img class="game-icon" src="../game-items/mat-aprofundamento-3.png" alt=""><span class="key-name">Diamond</span></div><div class="key-item"><img class="game-icon" src="../game-items/mat-aprofundamento-4.png" alt=""><span class="key-name">Stardrop</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Trig — adição e arco duplo</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/mat-aprofundamento-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/mat-aprofundamento-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/mat-aprofundamento-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/mat-aprofundamento-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -460,7 +528,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="qui-aprofundamento" style="left:30.00mm;top:404.00mm;">
-      <h1 class="brand"><span class="subject">Química</span> – <span class="level">Aprofundamento</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Química</span> – <span class="level">Aprofundamento</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/qui-aprofundamento-1.png" alt=""><span class="key-name">Frozen Geode</span></div><div class="key-item"><img class="game-icon" src="../game-items/qui-aprofundamento-2.png" alt=""><span class="key-name">Magma Geode</span></div><div class="key-item"><img class="game-icon" src="../game-items/qui-aprofundamento-3.png" alt=""><span class="key-name">Solar Essence</span></div><div class="key-item"><img class="game-icon" src="../game-items/qui-aprofundamento-4.png" alt=""><span class="key-name">Void Essence</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Equilíbrio — constantes e Le Chatelier</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/qui-aprofundamento-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/qui-aprofundamento-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/qui-aprofundamento-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/qui-aprofundamento-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -501,7 +572,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="por-aprofundamento" style="left:362.78mm;top:438.00mm;">
-      <h1 class="brand"><span class="subject">Português</span> – <span class="level">Aprofundamento</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Português</span> – <span class="level">Aprofundamento</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/por-aprofundamento-1.png" alt=""><span class="key-name">Dwarf Scroll II</span></div><div class="key-item"><img class="game-icon" src="../game-items/por-aprofundamento-2.png" alt=""><span class="key-name">Dwarf Scroll III</span></div><div class="key-item"><img class="game-icon" src="../game-items/por-aprofundamento-3.png" alt=""><span class="key-name">Dwarf Scroll IV</span></div><div class="key-item"><img class="game-icon" src="../game-items/por-aprofundamento-4.png" alt=""><span class="key-name">Dwarvish Translation Guide</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Subordinadas e argumentação</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/por-aprofundamento-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/por-aprofundamento-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/por-aprofundamento-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/por-aprofundamento-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -534,7 +608,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="ing-aprofundamento" style="left:30.00mm;top:508.00mm;">
-      <h1 class="brand"><span class="subject">Inglês</span> – <span class="level">Aprofundamento</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Inglês</span> – <span class="level">Aprofundamento</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/ing-aprofundamento-1.png" alt=""><span class="key-name">Ancient Doll</span></div><div class="key-item"><img class="game-icon" src="../game-items/ing-aprofundamento-2.png" alt=""><span class="key-name">Strange Doll (green)</span></div><div class="key-item"><img class="game-icon" src="../game-items/ing-aprofundamento-3.png" alt=""><span class="key-name">Strange Doll (yellow)</span></div><div class="key-item"><img class="game-icon" src="../game-items/ing-aprofundamento-4.png" alt=""><span class="key-name">Ancient Seed</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Compreensão detalhada</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/ing-aprofundamento-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/ing-aprofundamento-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/ing-aprofundamento-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/ing-aprofundamento-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -559,7 +636,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="fis-intensidade" style="left:362.78mm;top:34.00mm;">
-      <h1 class="brand"><span class="subject">Física</span> – <span class="level">Intensidade</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Física</span> – <span class="level">Intensidade</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/fis-intensidade-1.png" alt=""><span class="key-name">Cinder Shard</span></div><div class="key-item"><img class="game-icon" src="../game-items/fis-intensidade-2.png" alt=""><span class="key-name">Magnifying Glass</span></div><div class="key-item"><img class="game-icon" src="../game-items/fis-intensidade-3.png" alt=""><span class="key-name">Prismatic Shard</span></div><div class="key-item"><img class="game-icon" src="../game-items/fis-intensidade-4.png" alt=""><span class="key-name">Pearl</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Revisão — mecânica integrada</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/fis-intensidade-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/fis-intensidade-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/fis-intensidade-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/fis-intensidade-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -592,7 +672,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="mat-intensidade" style="left:362.78mm;top:122.00mm;">
-      <h1 class="brand"><span class="subject">Matemática</span> – <span class="level">Intensidade</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Matemática</span> – <span class="level">Intensidade</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/mat-intensidade-1.png" alt=""><span class="key-name">Qi Gem</span></div><div class="key-item"><img class="game-icon" src="../game-items/mat-intensidade-2.png" alt=""><span class="key-name">Return Scepter</span></div><div class="key-item"><img class="game-icon" src="../game-items/mat-intensidade-3.png" alt=""><span class="key-name">Statue Of Perfection</span></div><div class="key-item"><img class="game-icon" src="../game-items/mat-intensidade-4.png" alt=""><span class="key-name">Gold Clock</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Integração — polinômios e complexos</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/mat-intensidade-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/mat-intensidade-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/mat-intensidade-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/mat-intensidade-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -621,7 +704,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="qui-intensidade" style="left:30.00mm;top:152.00mm;">
-      <h1 class="brand"><span class="subject">Química</span> – <span class="level">Intensidade</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Química</span> – <span class="level">Intensidade</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/qui-intensidade-1.png" alt=""><span class="key-name">Omni Geode</span></div><div class="key-item"><img class="game-icon" src="../game-items/qui-intensidade-2.png" alt=""><span class="key-name">Fairy Dust</span></div><div class="key-item"><img class="game-icon" src="../game-items/qui-intensidade-3.png" alt=""><span class="key-name">Radioactive Ore</span></div><div class="key-item"><img class="game-icon" src="../game-items/qui-intensidade-4.png" alt=""><span class="key-name">Radioactive Bar</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Bioquímica — biomoléculas</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/qui-intensidade-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/qui-intensidade-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/qui-intensidade-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/qui-intensidade-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -650,7 +736,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="por-intensidade" style="left:362.78mm;top:204.00mm;">
-      <h1 class="brand"><span class="subject">Português</span> – <span class="level">Intensidade</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Português</span> – <span class="level">Intensidade</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/por-intensidade-1.png" alt=""><span class="key-name">Secret Note</span></div><div class="key-item"><img class="game-icon" src="../game-items/por-intensidade-2.png" alt=""><span class="key-name">Magic Ink</span></div><div class="key-item"><img class="game-icon" src="../game-items/por-intensidade-3.png" alt=""><span class="key-name">Book Of Stars</span></div><div class="key-item"><img class="game-icon" src="../game-items/por-intensidade-4.png" alt=""><span class="key-name">Key To The Town</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Redação — critérios da banca</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/por-intensidade-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/por-intensidade-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/por-intensidade-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/por-intensidade-4.png" alt="" /><span class="date">__/__</span></div></div>
@@ -675,7 +764,10 @@
       </div>
     </section>
     <section class="sheet" data-subject="ing-intensidade" style="left:30.00mm;top:230.00mm;">
-      <h1 class="brand"><span class="subject">Inglês</span> – <span class="level">Intensidade</span></h1>
+      <div class="brand-row">
+        <h1 class="brand"><span class="subject">Inglês</span> – <span class="level">Intensidade</span></h1>
+        <div class="key"><div class="key-item"><img class="game-icon" src="../game-items/ing-intensidade-1.png" alt=""><span class="key-name">Golden Walnut</span></div><div class="key-item"><img class="game-icon" src="../game-items/ing-intensidade-2.png" alt=""><span class="key-name">Golden Coconut</span></div><div class="key-item"><img class="game-icon" src="../game-items/ing-intensidade-3.png" alt=""><span class="key-name">Prize Ticket</span></div><div class="key-item"><img class="game-icon" src="../game-items/ing-intensidade-4.png" alt=""><span class="key-name">Golden Pumpkin</span></div></div>
+      </div>
       <div class="grid">
         <div class="topic"><span class="num">01</span><span class="topic-text">Leitura — velocidade de prova</span></div>
         <div class="marks"><div class="mark"><img class="game-icon" src="../game-items/ing-intensidade-1.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/ing-intensidade-2.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/ing-intensidade-3.png" alt="" /><span class="date">__/__</span></div><div class="mark"><img class="game-icon" src="../game-items/ing-intensidade-4.png" alt="" /><span class="date">__/__</span></div></div>
