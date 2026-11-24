@@ -23,6 +23,10 @@ Centro do método: **papel e lápis**. A tela serve para ler e imprimir.
 
 Mapa completo dos dias (visão do produtor): [docs/curriculum-map.md](docs/curriculum-map.md).
 
+## Painel Roadmap
+
+- [Sardew Valley](painel/a1-retrato.html ':ignore')
+
 ## Programa oficial
 
 Índice com links para o programa do exame: [PROGRAMA.md](PROGRAMA.md).
