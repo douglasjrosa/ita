@@ -2,388 +2,287 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Física · Fundação — folha 1</title>
+  <title>Painel — Física e Matemática</title>
   <style>
-    @page {
-      size: A4 landscape;
-      margin: 0;
-    }
-
+    @page { size: A4 landscape; margin: 0; }
     * { box-sizing: border-box; }
-
     html, body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
-      background: #fff;
-      color: #111;
+      margin: 0; padding: 0; background: #fff; color: #111;
       font-family: "Liberation Serif", "Times New Roman", serif;
     }
-
     .page {
       width: 100vw;
       height: 100vh;
-      padding: 3.4vw 0.5vw 2.4vw;
+      padding: 2.2vw 0.5vw 1.6vw;
       display: flex;
       flex-direction: column;
+      page-break-after: always;
+      break-after: page;
     }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 0.12vw solid #111;
-      padding-bottom: 0.7vw;
-      margin-bottom: 0.9vw;
+    .page:last-child {
+      page-break-after: auto;
+      break-after: auto;
     }
-
-    h1 {
-      margin: 0;
-      font-size: 1.7vw;
-      font-weight: 700;
-    }
-
-    .meta {
-      font-family: "Liberation Sans", Arial, sans-serif;
-      font-size: 0.85vw;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #333;
-    }
-
-    .legend {
-      font-family: "Liberation Sans", Arial, sans-serif;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.6vw 1.2vw;
-      font-size: 0.82vw;
-      line-height: 1.25;
-      margin-bottom: 1vw;
-    }
-
-    .leg {
-      display: flex;
-      align-items: center;
-      gap: 0.45vw;
-    }
-
     .grid {
-      flex: 1;
       width: 99vw;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 24.75vw 8.25vw 24.75vw 8.25vw 24.75vw 8.25vw;
-      grid-template-rows: auto repeat(6, 1fr);
-      column-gap: 0;
+      grid-auto-rows: min-content;
       align-items: stretch;
     }
-
-    .grid > :nth-child(6n + 3),
-    .grid > :nth-child(6n + 5) {
-      padding-left: 0.55vw;
-      border-left: 0.07vw solid #ccc;
-    }
-
-    .col-title,
-    .col-diam {
+    .col-title, .col-diam {
       font-family: "Liberation Sans", Arial, sans-serif;
-      font-size: 0.7vw;
+      font-size: 0.68vw;
       letter-spacing: 0.07em;
       text-transform: uppercase;
       color: #666;
-      padding-bottom: 0.35vw;
+      padding: 0.15vw 0 0.3vw;
       border-bottom: 0.08vw solid #bbb;
     }
-
     .col-diam {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       text-align: center;
     }
-
+    .col-break, .topic-break {
+      padding-left: 0.5vw;
+      border-left: 0.07vw solid #ccc;
+    }
     .topic {
-      font-size: 1.05vw;
-      line-height: 1.2;
       display: flex;
       align-items: center;
-      padding-right: 0.6vw;
+      gap: 0.4vw;
+      padding: 0.38vw 0.45vw 0.38vw 0;
       border-bottom: 0.06vw solid #ddd;
+      min-height: 2.55vw;
     }
-
+    .topic.empty, .marks.empty { border-bottom: none; }
     .num {
       font-family: "Liberation Sans", Arial, sans-serif;
-      font-size: 0.78vw;
+      font-size: 0.72vw;
       color: #666;
-      margin-right: 0.45vw;
+      flex: 0 0 auto;
+      align-self: flex-start;
+      padding-top: 0.08vw;
     }
-
+    .topic-text {
+      flex: 1 1 auto;
+      min-width: 0;
+      font-size: 0.92vw;
+      line-height: 1.18;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
+    }
     .marks {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       align-items: center;
       border-bottom: 0.06vw solid #ddd;
+      min-height: 2.55vw;
     }
-
     .mark {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.18vw;
+      gap: 0.14vw;
     }
-
-    .diamond {
-      width: 1.45vw;
-      height: 1.45vw;
-      display: block;
-    }
-
+    .diamond { width: 1.4vw; height: 1.4vw; display: block; }
     .date {
       font-family: "Liberation Sans", Arial, sans-serif;
       font-size: 0.62vw;
       letter-spacing: 0.08em;
       color: #999;
     }
-
-    footer {
-      font-family: "Liberation Sans", Arial, sans-serif;
-      font-size: 0.72vw;
-      color: #666;
-      display: flex;
-      justify-content: space-between;
-      margin-top: 0.7vw;
-      padding-top: 0.5vw;
-      border-top: 0.08vw solid #bbb;
-    }
-  </style>
+</style>
 </head>
 <body>
   <section class="page">
-    <header>
-      <h1>Física · Fundação</h1>
-      <div class="meta">Folha 1 de 1 · A4 paisagem</div>
-    </header>
-
-    <div class="legend">
-      <div class="leg">
-        <svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg>
-        <div><b>1 · Conceito.</b> Explica sem consultar.</div>
-      </div>
-      <div class="leg">
-        <svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg>
-        <div><b>2 · Fácil.</b> Lista simples, quase sem erro.</div>
-      </div>
-      <div class="leg">
-        <svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg>
-        <div><b>3 · Difícil.</b> Lista pesada; a maior parte certa.</div>
-      </div>
-      <div class="leg">
-        <svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg>
-        <div><b>4 · Fixou.</b> O 3 de novo, ~2–3 meses depois.</div>
-      </div>
+    <div class="grid">
+      <div class="col-title">Tópico</div>
+      <div class="col-diam"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+      <div class="col-title col-break">Tópico</div>
+      <div class="col-diam"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+      <div class="col-title col-break">Tópico</div>
+      <div class="col-diam"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+      <div class="topic"><span class="num">01</span><span class="topic-text">Introdução e unidades</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">14</span><span class="topic-text">Colisões e centro de massa</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">27</span><span class="topic-text">Potencial e capacitores</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">02</span><span class="topic-text">MRU</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">15</span><span class="topic-text">Gravitação e Kepler</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">28</span><span class="topic-text">Corrente, Ohm e associações</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">03</span><span class="topic-text">MRUV</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">16</span><span class="topic-text">Termologia e dilatação</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">29</span><span class="topic-text">Kirchhoff e geradores</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">04</span><span class="topic-text">Vetores e cinemática vetorial</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">17</span><span class="topic-text">Calorimetria e gases ideais</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">30</span><span class="topic-text">Magnetismo e forças</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">05</span><span class="topic-text">Queda livre e projéteis</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">18</span><span class="topic-text">Ondas e som</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">31</span><span class="topic-text">Indução — Faraday e Lenz</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">06</span><span class="topic-text">MCU — cinemática circular</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">19</span><span class="topic-text">MHS e pêndulo</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">32</span><span class="topic-text">Referenciais acelerados</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">07</span><span class="topic-text">Estática de partículas</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">20</span><span class="topic-text">Fluidos — estática</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">33</span><span class="topic-text">Energia mecânica — problemas duros</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">08</span><span class="topic-text">Estática de corpo rígido</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">21</span><span class="topic-text">Fluidos — Bernoulli</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">34</span><span class="topic-text">Colisões (aprofundado)</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">09</span><span class="topic-text">Leis de Newton — dinâmica retilínea</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">22</span><span class="topic-text">Termodinâmica — 1ª e 2ª leis</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">35</span><span class="topic-text">Gravitação — campo e potencial</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">10</span><span class="topic-text">Dinâmica circular e centrípeta</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">23</span><span class="topic-text">Ondas — cordas, tubos e Doppler</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">36</span><span class="topic-text">Circuitos integrados</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">11</span><span class="topic-text">Impulso e quantidade de movimento</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">24</span><span class="topic-text">Óptica — reflexão e refração</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">37</span><span class="topic-text">Óptica ondulatória — Young</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">12</span><span class="topic-text">Trabalho e energia cinética</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">25</span><span class="topic-text">Espelhos, lentes e sistemas</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">38</span><span class="topic-text">Dissertativa — treino de mecânica</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">13</span><span class="topic-text">Energia potencial e conservação</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">26</span><span class="topic-text">Eletrostática — Coulomb e campo</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break empty"></div>
+      <div class="marks empty"></div>
     </div>
-
-    <div class="grid" id="grid">
+  </section>
+  <section class="page">
+    <div class="grid">
       <div class="col-title">Tópico</div>
       <div class="col-diam"><span>1</span><span>2</span><span>3</span><span>4</span></div>
-      <div class="col-title">Tópico</div>
+      <div class="col-title col-break">Tópico</div>
       <div class="col-diam"><span>1</span><span>2</span><span>3</span><span>4</span></div>
-      <div class="col-title">Tópico</div>
+      <div class="col-title col-break">Tópico</div>
       <div class="col-diam"><span>1</span><span>2</span><span>3</span><span>4</span></div>
-      <div class="topic"><span class="num">01</span>Introdução e unidades</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">07</span>Estática de partículas</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">13</span>Energia potencial e conservação</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">02</span>MRU</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">08</span>Estática de corpo rígido</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">14</span>Colisões e centro de massa</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">03</span>MRUV</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">09</span>Leis de Newton — dinâmica retilínea</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">15</span>Gravitação e Kepler</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">04</span>Vetores e cinemática vetorial</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">10</span>Dinâmica circular e centrípeta</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">16</span>Termologia e dilatação</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">05</span>Queda livre e projéteis</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">11</span>Impulso e quantidade de movimento</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">17</span>Calorimetria e gases ideais</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">06</span>MCU — cinemática circular</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">12</span>Trabalho e energia cinética</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
-      <div class="topic"><span class="num">18</span>Ondas e som</div>
-      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/>
-        </svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">01</span><span class="topic-text">Conjuntos numéricos</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">15</span><span class="topic-text">Geometria plana — triângulos</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">29</span><span class="topic-text">Hipérbole e lugares geométricos</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">02</span><span class="topic-text">Divisibilidade, primos e TFA</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">16</span><span class="topic-text">Semelhança e relações métricas</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">30</span><span class="topic-text">Geometria espacial — retas e planos</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">03</span><span class="topic-text">Indução e princípio das gavetas</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">17</span><span class="topic-text">Polígonos, circunferência e áreas</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">31</span><span class="topic-text">Poliedros, prismas e pirâmides</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">04</span><span class="topic-text">Sequências e PA</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">18</span><span class="topic-text">Produtos notáveis e fatoração</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">32</span><span class="topic-text">Cilindros, cones e esferas</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">05</span><span class="topic-text">PG e soma infinita</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">19</span><span class="topic-text">Equações e sistemas 1º/2º grau</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">33</span><span class="topic-text">Matrizes — operações</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">06</span><span class="topic-text">Funções — conceito</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">20</span><span class="topic-text">Revisão — fundamentos de matemática</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">34</span><span class="topic-text">Determinantes</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">07</span><span class="topic-text">Função afim e inequações</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">21</span><span class="topic-text">Trig — adição e arco duplo</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">35</span><span class="topic-text">Sistemas lineares — discussão</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">08</span><span class="topic-text">Função quadrática</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">22</span><span class="topic-text">Equações e inequações trigonométricas</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">36</span><span class="topic-text">Complexos — forma algébrica</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">09</span><span class="topic-text">Função modular</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">23</span><span class="topic-text">Polinômios — operações</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">37</span><span class="topic-text">Complexos — Moivre</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">10</span><span class="topic-text">Exponenciais</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">24</span><span class="topic-text">Equações algébricas e raízes</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">38</span><span class="topic-text">Combinatória — contagem</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">11</span><span class="topic-text">Logaritmos</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">25</span><span class="topic-text">Relações coeficientes e recíprocas</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">39</span><span class="topic-text">Binômio de Newton</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">12</span><span class="topic-text">Equações e inequações exp/log</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">26</span><span class="topic-text">Geometria analítica — reta</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">40</span><span class="topic-text">Probabilidade condicional</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">13</span><span class="topic-text">Trigonometria no triângulo</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">27</span><span class="topic-text">Circunferência analítica</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">41</span><span class="topic-text">Funções compostas e inversas</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic"><span class="num">14</span><span class="topic-text">Funções trigonométricas básicas</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">28</span><span class="topic-text">Cônicas — parábola e elipse</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
+      <div class="topic topic-break"><span class="num">42</span><span class="topic-text">Dissertativa — treino de matemática</span></div>
+      <div class="marks"><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div><div class="mark"><svg class="diamond" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L21.8 12 L12 21.8 L2.2 12 Z" fill="none" stroke="#111" stroke-width="1.4"/></svg><span class="date">__/__</span></div></div>
     </div>
-
-    <footer>
-      <span>Pinte o diamante quando a evidência autorizar. Data embaixo (dia/mês).</span>
-      <span>Aprofundamento · folha seguinte</span>
-    </footer>
   </section>
 </body>
 </html>
