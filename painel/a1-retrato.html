@@ -13,7 +13,7 @@
       height: 841mm;
       background: #fff;
       color: #111;
-      font-family: "Liberation Serif", "Times New Roman", serif;
+      font-family: Arial, Helvetica, sans-serif;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -50,8 +50,15 @@
       opacity: 1;
       border: 0.18mm solid rgba(60, 48, 32, 0.18);
       border-radius: 1.8mm;
+      cursor: grab;
+      user-select: none;
+      touch-action: none;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
+    }
+    .sheet.is-dragging {
+      cursor: grabbing;
+      z-index: 50;
     }
     .sheet::before,
     .footer::before {
@@ -107,8 +114,8 @@
       opacity: 1;
     }
     .key-name {
-      font-family: "Liberation Sans", Arial, sans-serif;
-      font-size: 1.95mm;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2.35mm;
       line-height: 1.12;
       text-align: center;
       color: #111;
@@ -117,7 +124,7 @@
       -webkit-line-clamp: 2;
       line-clamp: 2;
       overflow: hidden;
-      max-height: 4.4mm;
+      max-height: 5.4mm;
     }
     .brand .subject {
       font-style: italic;
@@ -148,12 +155,18 @@
     }
     .topic.empty, .marks.empty { border-bottom: none; }
     .num {
-      font-family: "Liberation Sans", Arial, sans-serif;
-      font-size: 2.435mm;
-      color: #666;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: stretch;
       flex: 0 0 auto;
-      align-self: flex-start;
-      padding-top: 0.356mm;
+      min-width: 7.2mm;
+      padding: 0 1.10mm;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2.435mm;
+      line-height: 1;
+      text-align: center;
+      color: #666;
     }
     .topic-text {
       flex: 1 1 auto;
@@ -208,7 +221,7 @@
       filter: grayscale(100%) opacity(0.45);
     }
     .date {
-      font-family: "Liberation Sans", Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 1.50mm;
       letter-spacing: 0.08em;
       color: #888;
@@ -230,7 +243,7 @@
       print-color-adjust: exact;
     }
     .legend {
-      font-family: "Liberation Sans", Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.6mm 2.4mm;
@@ -251,9 +264,43 @@
       flex: 0 0 auto;
       opacity: 1;
     }
+    .export-btn {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 10000;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      background: #111;
+      color: #fff;
+      border: 0;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+    }
+    .export-btn:hover { background: #333; }
+    @media print {
+      .no-print { display: none !important; }
+      html, body, .page {
+        width: 594mm !important;
+        height: 841mm !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        background: #fff !important;
+      }
+      .sheet {
+        cursor: default !important;
+        user-select: auto;
+      }
+    }
 </style>
 </head>
 <body>
+  <button type="button" id="export-pdf" class="export-btn no-print" title="Chrome: Save as PDF, paper A1, margins none, background graphics on">Export</button>
   <div class="page">
     <div class="backdrop" aria-hidden="true">
       <img src="media/stardew-mountain.jpg" alt="">
@@ -820,5 +867,91 @@
       </div>
     </footer>
   </div>
+  <script>
+    (function () {
+      var PAGE_W_MM = 594;
+      var PAGE_H_MM = 841;
+      var STORAGE_KEY = "a1-retrato-sheet-positions";
+      var page = document.querySelector(".page");
+      var sheets = Array.prototype.slice.call(document.querySelectorAll(".sheet"));
+      var dragging = null;
+      var zTop = 10;
+
+      function loadPositions() {
+        try {
+          var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+          sheets.forEach(function (sheet) {
+            var pos = saved[sheet.getAttribute("data-subject")];
+            if (pos && pos.left && pos.top) {
+              sheet.style.left = pos.left;
+              sheet.style.top = pos.top;
+            }
+          });
+        } catch (err) {}
+      }
+
+      function savePositions() {
+        var data = {};
+        sheets.forEach(function (sheet) {
+          data[sheet.getAttribute("data-subject")] = {
+            left: sheet.style.left,
+            top: sheet.style.top
+          };
+        });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      }
+
+      function moveSheet(sheet, clientX, clientY, offsetX, offsetY) {
+        var pageRect = page.getBoundingClientRect();
+        var sheetRect = sheet.getBoundingClientRect();
+        var leftMm = ((clientX - offsetX - pageRect.left) / pageRect.width) * PAGE_W_MM;
+        var topMm = ((clientY - offsetY - pageRect.top) / pageRect.height) * PAGE_H_MM;
+        var sheetWmm = (sheetRect.width / pageRect.width) * PAGE_W_MM;
+        var sheetHmm = (sheetRect.height / pageRect.height) * PAGE_H_MM;
+        leftMm = Math.min(Math.max(leftMm, 0), PAGE_W_MM - sheetWmm);
+        topMm = Math.min(Math.max(topMm, 0), PAGE_H_MM - sheetHmm);
+        sheet.style.left = leftMm.toFixed(2) + "mm";
+        sheet.style.top = topMm.toFixed(2) + "mm";
+      }
+
+      sheets.forEach(function (sheet) {
+        sheet.addEventListener("pointerdown", function (event) {
+          if (event.button !== 0) return;
+          var rect = sheet.getBoundingClientRect();
+          dragging = {
+            sheet: sheet,
+            offsetX: event.clientX - rect.left,
+            offsetY: event.clientY - rect.top
+          };
+          zTop += 1;
+          sheet.style.zIndex = String(zTop);
+          sheet.classList.add("is-dragging");
+          sheet.setPointerCapture(event.pointerId);
+          event.preventDefault();
+        });
+
+        sheet.addEventListener("pointermove", function (event) {
+          if (!dragging || dragging.sheet !== sheet) return;
+          moveSheet(sheet, event.clientX, event.clientY, dragging.offsetX, dragging.offsetY);
+        });
+
+        function endDrag() {
+          if (!dragging || dragging.sheet !== sheet) return;
+          sheet.classList.remove("is-dragging");
+          dragging = null;
+          savePositions();
+        }
+
+        sheet.addEventListener("pointerup", endDrag);
+        sheet.addEventListener("pointercancel", endDrag);
+      });
+
+      loadPositions();
+
+      document.getElementById("export-pdf").addEventListener("click", function () {
+        window.print();
+      });
+    })();
+  </script>
 </body>
 </html>
